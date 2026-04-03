@@ -1,6 +1,14 @@
 import Joi from "joi";
 
- console.log("SCHEMA LOADED ✅");
+/**
+ * @desc    Financial Transaction Validation Schema
+ * @description Validates the payload for creating or updating financial records.
+ * - Title: 3-50 characters, trimmed.
+ * - Amount: Must be a positive number (Strictly > 0).
+ * - Type: Restricted to 'income' or 'expense'.
+ * - Category: Must match predefined financial categories.
+ * - targetUserId: Optional field, but must be a valid 24-character Hex string (MongoDB ObjectId).
+ */
 export const transactionSchema = Joi.object({
    
     title: Joi.string().min(3).max(50).required().messages({
