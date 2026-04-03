@@ -37,7 +37,7 @@ const transactionSchema = new mongoose.Schema(
     amount: {
       type: Number,
       required: [true, "Amount is required"],
-      min: [1, "Amount must be at least 1"], // 0 amount ka koi matlab nahi
+      min: [1, "Amount must be at least 1"], // 0 has not been allowed as per validation rules, so min is set to 1
     },
 
     type: {
@@ -84,8 +84,7 @@ const transactionSchema = new mongoose.Schema(
     toObject: { virtuals: true },
   },
 );
-// ADVANCE: Compound Indexing (UserId + Date)
-// Jab hum query karenge: "Sagar ke last 1 month ke transactions dikhao", toh ye index use hoga.
+// Compound Indexing (UserId + Date) for faster retrieval of user transaction history
 transactionSchema.index({ userId: 1, date: -1 });
 
 const TransactionModel = mongoose.model("Transaction", transactionSchema);

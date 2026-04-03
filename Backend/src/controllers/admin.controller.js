@@ -9,12 +9,27 @@ import ErrorHandler from "../utils/errorHandler.js";
  * @access  Private/Admin
  */
 export const getAllUsers = catchAsync(async (req, res, next) => {
-    // Sabhi users ko fetch karo (par password nahi)
-    const users = await UserModel.find();
-    
+  
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+
+   
+    const users = await UserModel.find()
+        .select("-password")
+        .sort({ createdAt: -1 }) 
+        .skip(skip)
+        .limit(limit);
+
+   
+    const totalUsers = await UserModel.countDocuments();
+
     res.status(200).json({
         success: true,
         count: users.length,
+        totalUsers,
+        totalPages: Math.ceil(totalUsers / limit),
+        currentPage: page,
         users
     });
 });
@@ -34,7 +49,7 @@ export const updateUserByAdmin = catchAsync(async (req, res, next) => {
     if (id === req.user._id.toString()) {
         return next(new ErrorHandler("You cannot update your own admin account!", 400));
     }
-    // User ko dhoondo aur update karo
+   
     const user = await UserModel.findByIdAndUpdate(
         id, 
         { role, status }, 
@@ -45,7 +60,7 @@ export const updateUserByAdmin = catchAsync(async (req, res, next) => {
         return next(new ErrorHandler("User nahi mila!", 404));
     }
 
-    res.status(200).json({ 
+    return res.status(200).json({ 
         success: true, 
         message: `User ${user.username} is now ${user.role} and ${user.status}`, 
         user 
@@ -69,12 +84,12 @@ export const deleteUserByAdmin = catchAsync(async (req, res, next) => {
 
     if (!user) return next(new ErrorHandler("User not found", 404));
 
-    // Isse user DB se gayab nahi hoga, bas login nahi kar payega
+    
     user.status = 'inactive';
     user.isDeleted = true;
     await user.save();
 
-    res.status(200).json({ 
+    returnres.status(200).json({ 
         success: true, 
         message: "User has been deactivated/deleted by Admin" 
     });

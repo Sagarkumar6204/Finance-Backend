@@ -25,7 +25,7 @@ export const authorize = (requiredPermission) => {
       if (!req.user) {
             return next(new ErrorHandler("Authentication required", 401));
         }
-        // 1. Check if user is Active (Assignment Point #1)
+       
         if (req.user.status !== 'active') {
             return next(new ErrorHandler("Access Denied: Your account is inactive", 403));
         }
@@ -33,7 +33,7 @@ export const authorize = (requiredPermission) => {
         const userRole = req.user.role;
         const permissions = ROLES_PERMISSIONS[userRole] || [];
 
-        // 2. Check if role has required permission (Assignment Point #4)
+        
         if (!permissions.includes(requiredPermission)) {
             return next(new ErrorHandler(`Forbidden: ${userRole} role cannot perform this action`, 403));
         }

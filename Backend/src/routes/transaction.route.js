@@ -3,7 +3,7 @@ import {  updateTransaction, deleteTransaction, getFilterTransactions,  createTr
 import authenticate from "../middlewares/auth.middleware.js";
 import validate from "../middlewares/authValidate.middleware.js";
 import { authorize } from "../middlewares/accessControl.middleware.js";
-import { transactionSchema } from "../validators/transaction.validator.js";
+import { transactionSchema, updateTransactionSchema } from "../validators/transaction.validator.js";
 /**
  * @desc    Transaction Management Router
  * @description Centralized hub for managing financial records. 
@@ -58,7 +58,7 @@ transactionRouter.post("/add",authorize('create:record'), validate(transactionSc
  * @desc    Modify an existing transaction record.
  * @access  Private (Permission: 'update:record')
  */
-transactionRouter.put("/update/:id", authorize('update:record'), validate(transactionSchema), updateTransaction); 
+transactionRouter.put("/update/:id", authorize('update:record'), validate(updateTransactionSchema), updateTransaction); 
 /**
  * @route   DELETE /api/transactions/delete/:id
  * @desc    Permanently remove a transaction from the ledger.

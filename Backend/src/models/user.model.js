@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
     unique: true, 
     lowercase: true,
     trim: true,
-    index: true // Email par indexing login fast karegi
+    index: true 
   },
   password: { 
     type: String, 
@@ -45,7 +45,7 @@ const userSchema = new mongoose.Schema({
     enum: ['active', 'inactive'], 
     default: 'active' 
   },
-  isDeleted: { type: Boolean, default: false } // Soft delete logic
+  isDeleted: { type: Boolean, default: false } 
 }, { timestamps: true });
 
 const UserModel= mongoose.model('User', userSchema);

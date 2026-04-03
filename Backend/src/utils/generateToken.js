@@ -18,7 +18,7 @@ import path from "path";
 
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 export const generateToken = (res, userId, role, name) => {
-    // Check if secret exists
+    
     const secret = process.env.JWT_SECRET;
    
     if (!secret) {
@@ -27,7 +27,7 @@ export const generateToken = (res, userId, role, name) => {
 
     const token = jwt.sign(
         { id: userId, role: role, username: name }, 
-        secret , // Fallback for safety
+        secret , 
         { expiresIn: "1d" } 
     );
 
@@ -38,7 +38,7 @@ export const generateToken = (res, userId, role, name) => {
         maxAge: 24 * 60 * 60 * 1000, 
     };
 
-    // res yahan zaroori hai cookie set karne ke liye
+    
     res.cookie("token", token, cookieOptions);
 
     return token;

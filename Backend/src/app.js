@@ -21,7 +21,7 @@ const app= express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: process.env.FRONTEND_URL ? process.env.FRONTEND_URL : true, // 👈 Ya toh frontend ka link ya sabke liye "*"
+    origin: process.env.FRONTEND_URL ? process.env.FRONTEND_URL : true, 
     credentials: true,
    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],

@@ -12,11 +12,11 @@ import Joi from "joi";
 export const transactionSchema = Joi.object({
    
     title: Joi.string().min(3).max(50).required().messages({
-        "string.min": "Title kam se kam 3 characters ka hona chahiye",
-        "any.required": "Title zaroori hai"
+        "string.min": "Title must be at least 3 characters long",
+        "any.required": "Title is required"
     }),
     amount: Joi.number().positive().required().messages({
-        "number.positive": "Amount hamesha 0 se bada hona chahiye"
+        "number.positive": "Amount must be a positive number"
     }),
     type: Joi.string().valid("income", "expense").required(),
     category: Joi.string().valid('food', 'rent', 'salary', 'shopping', 'entertainment', 'health', 'investment', 'others').required(),
@@ -28,4 +28,31 @@ export const transactionSchema = Joi.object({
     .length(24)
     .optional(),
 
-}); // unknown(true) se extra fields allow ho jayenge, par validation sirf defined fields pe hoga
+}); 
+export const updateTransactionSchema = Joi.object({
+    title: Joi.string().optional().messages({
+        'string.base': 'Title must be a string text.',
+    }),
+    amount: Joi.number().optional().messages({
+        'number.base': 'Amount must be a valid number.',
+        'number.positive': 'Amount cannot be a negative value.',
+    }),
+    category: Joi.string().optional().messages({
+        'string.base': 'Category must be a string text.',
+    }),
+    type: Joi.string().valid('income', 'expense').optional().messages({
+        'any.only': 'Type must be either "income" or "expense".',
+    }),
+    paymentMethod: Joi.string().optional().messages({
+        'string.base': 'Payment method must be a valid string.',
+    }),
+    date: Joi.date().optional().messages({
+        'date.base': 'Please provide a valid date format.',
+    }),
+    notes: Joi.string().optional(),
+    targetUserId: Joi.string().optional().messages({
+        'string.base': 'Target User ID must be a valid string.',
+    })
+}).min(1).messages({
+    'object.min': 'At least one field must be provided for the update operation.'
+});

@@ -11,15 +11,15 @@ import catchAsync from "../utils/catchAsync.js";
  * @access  Private (Admin)
  */
 export const createTransaction = catchAsync(async (req, res, next) => {
-    // 1. targetUserId ko body se alag nikalo
+   
     const { title, amount, type, category, paymentMethod, date, notes, targetUserId } = req.body;
 
-    // Admin can assign to someone else or themselves
+
     const finalUserId = (req.user.role === 'admin' && targetUserId) 
                         ? targetUserId 
                         : req.user._id;
 
-    // 3. Model create karte waqt 'targetUserId' ko mat bhejo, sirf 'userId' bhejo
+    
     const transaction = await TransactionModel.create({
         title,
         amount,
@@ -28,10 +28,10 @@ export const createTransaction = catchAsync(async (req, res, next) => {
         paymentMethod,
         date,
         notes,
-        userId: finalUserId // 👈 Model ko 'userId' chahiye
+        userId: finalUserId 
     });
 
-    res.status(201).json({ 
+    return res.status(201).json({ 
         success: true, 
         message: targetUserId ? "Transaction assigned to user!" : "Transaction added to your account!", 
         data: transaction 
@@ -55,14 +55,14 @@ export const getTransactions = catchAsync(async (req, res, next) => {
     }
 
     const transactions = await TransactionModel.find(query)
-        .populate("userId", "username email role") // 👈 Admin ke liye user details dikhana achha hota hai
+        .populate("userId", "username email role") 
         .sort({ date: -1 })
         .skip(skip)
         .limit(limit);
 
     const total = await TransactionModel.countDocuments(query);
 
-    res.status(200).json({
+    return res.status(200).json({
         success: true,
         count: transactions.length,
         totalPages: Math.ceil(total / limit),
@@ -78,21 +78,30 @@ export const getTransactions = catchAsync(async (req, res, next) => {
  */
 export const getFilterTransactions = catchAsync(async (req, res, next) => {
     const { type, category, startDate, endDate } = req.query;
-    // 1. Pehle ek khali query object banao
+   
+    if (startDate && endDate) {
+        
+        
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+
+       
+        if (end < start) {
+            return next(new ErrorHandler("End date cannot be earlier than start date.", 400));
+        }
+    }
+  
     let query = {}; 
 
-    // 2. 🛡️ Role-Based Filtering Logic:
-    // Agar user 'viewer' hai, toh use sirf uska (self) data dikhao.
-    // Agar user 'admin' ya 'analyst' hai, toh 'userId' filter mat lagao (sabka dikhega).
+  
     if (req.user.role === 'viewer') {
         query.userId = req.user._id; 
     }
 
-    // 3. Baaki filters (Jo sabke liye common hain)
+  
     if (type) query.type = type;
     if (category) query.category = category;
 
-    // Date Range Filter (Agar dates di gayi hain)
     if (startDate && endDate) {
         query.date = { 
             $gte: new Date(startDate), 
@@ -100,12 +109,12 @@ export const getFilterTransactions = catchAsync(async (req, res, next) => {
         };
     }
 
-    // 4. Database se data uthao (userId ko populate kar rahe hain taaki pata chale kiska data hai)
+    
     const transactions = await TransactionModel.find(query)
-        .populate("userId", "username email") // 👈 Extra info ke liye
+        .populate("userId", "username email") 
         .sort({ date: -1 });
 
-    // 5. Response handling
+    
     if (!transactions || transactions.length === 0) {
         return res.status(200).json({ 
             success: true, 
@@ -114,7 +123,7 @@ export const getFilterTransactions = catchAsync(async (req, res, next) => {
         });
     }
 
-    res.status(200).json({
+   return res.status(200).json({
         success: true,
         count: transactions.length,
         data: transactions
@@ -130,21 +139,37 @@ export const getFilterTransactions = catchAsync(async (req, res, next) => {
  */
 export const updateTransaction = catchAsync(async (req, res, next) => {
     const { id } = req.params;
+
+    const allowedUpdates = ["title", "amount", "type", "category", "paymentMethod", "date", "notes"];
     
-    // 🎯 LOGIC: Sirf ID se dhoondo kyunki Admin kisi ka bhi update kar sakta hai
+    const updates = {};
+    Object.keys(req.body).forEach((key) => {
+        if (allowedUpdates.includes(key) && req.body[key] !== undefined) {
+            updates[key] = req.body[key];
+        }
+    });
+
+    if (Object.keys(updates).length === 0) {
+        return next(new ErrorHandler("No valid fields provided for update", 400));
+    }
+
     const transaction = await TransactionModel.findByIdAndUpdate(
         id, 
-        req.body, 
-        { new: true, runValidators: true }
+        { $set: updates }, 
+        { 
+            new: true, 
+            runValidators: true, 
+            context: 'query'     
+        }
     );
 
     if (!transaction) {
-        return next(new ErrorHandler("Transaction not found", 404));
+        return next(new ErrorHandler("Transaction record not found", 404));
     }
 
-    res.status(200).json({ 
+    return res.status(200).json({ 
         success: true, 
-        message: "Transaction updated by Admin!", 
+        message: "Transaction updated successfully!", 
         data: transaction 
     });
 });
@@ -158,14 +183,14 @@ export const updateTransaction = catchAsync(async (req, res, next) => {
 export const deleteTransaction = catchAsync(async (req, res, next) => {
     const { id } = req.params;
 
-    // 🎯 Global Delete: Kisi bhi userId ka transaction delete ho jayega
+    
     const transaction = await TransactionModel.findByIdAndDelete(id);
 
     if (!transaction) {
         return next(new ErrorHandler("Transaction not found", 404));
     }
 
-    res.status(200).json({ 
+    return res.status(200).json({ 
         success: true, 
         message: "Transaction deleted by Admin successfully" 
     });
@@ -184,20 +209,20 @@ export const getTransactionStats = catchAsync(async (req, res, next) => {
         matchQuery.userId = new mongoose.Types.ObjectId(req.user._id);
     }
 
-    // 1. Overall Stats (Income vs Expense + Counts + Averages)
+   
     const overallStats = await TransactionModel.aggregate([
         { $match: matchQuery },
         {
             $group: {
                 _id: "$type",
                 totalAmount: { $sum: "$amount" },
-                count: { $sum: 1 }, // 👈 Kitne transactions hue
-                avgAmount: { $avg: "$amount" } // 👈 Average kharcha/income kitna hai
+                count: { $sum: 1 }, 
+                avgAmount: { $avg: "$amount" } 
             }
         }
     ]);
 
-    // 2. Category Stats (Expenses Breakdown)
+   
     const expenseMatchQuery = { ...matchQuery, type: "expense" };
     const categoryStats = await TransactionModel.aggregate([
         { $match: expenseMatchQuery },
@@ -205,13 +230,13 @@ export const getTransactionStats = catchAsync(async (req, res, next) => {
             $group: {
                 _id: "$category",
                 totalSpent: { $sum: "$amount" },
-                transactionCount: { $sum: 1 } // 👈 Har category mein kitni baar kharcha hua
+                transactionCount: { $sum: 1 } 
             }
         },
         { $sort: { totalSpent: -1 } }
     ]);
 
-    // 3. Formatting the Response
+    
     const incomeData = overallStats.find(s => s._id === 'income');
     const expenseData = overallStats.find(s => s._id === 'expense');
 
@@ -233,7 +258,7 @@ export const getTransactionStats = catchAsync(async (req, res, next) => {
         categoryBreakdown: categoryStats
     };
 
-    res.status(200).json({
+    return res.status(200).json({
         success: true,
         message: req.user.role === 'viewer' ? "Detailed Personal Stats" : "Detailed Global Stats",
         data: stats
