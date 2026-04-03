@@ -1,6 +1,18 @@
 import jwt from "jsonwebtoken";
 import UserModel from "../models/user.model.js";
 
+/**
+ * @desc    Global Authentication Middleware
+ * @description Extracts and verifies JWT from Cookies or Authorization Headers.
+ * 1. Checks if a valid token exists.
+ * 2. Decodes and verifies the token using JWT_SECRET.
+ * 3. Fetches the current user from the database.
+ * 4. Injects user information into the 'req.user' object for subsequent middlewares/controllers.
+ * * @param   {Object} req - Express request object
+ * @param   {Object} res - Express response object
+ * @param   {Function} next - Express next middleware function
+ * @throws  {401} - If token is missing, invalid, or user no longer exists.
+ */
 const authenticate = async (req, res, next) => {
   try {
     let token;

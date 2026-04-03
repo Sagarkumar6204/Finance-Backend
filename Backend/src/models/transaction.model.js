@@ -1,5 +1,22 @@
 import mongoose from "mongoose";
+/**
+ * @typedef {Object} Transaction
+ * @property {ObjectId} userId - Reference to the User who owns this transaction.
+ * @property {String} title - Brief description of the transaction (max 50 chars).
+ * @property {Number} amount - Monetary value (must be at least 1).
+ * @property {String} type - Transaction type: 'income' or 'expense'.
+ * @property {String} category - Categorization for spending analysis.
+ * @property {String} paymentMethod - Mode of transaction: 'cash', 'online', 'card'.
+ * @property {Date} date - Date of transaction (defaults to current timestamp).
+ * @property {String} notes - Additional remarks (max 250 chars).
+ */
 
+/**
+ * @desc    Mongoose schema for Financial Transactions.
+ * Includes strict validation, enums for data integrity, and indexing for performance.
+ * - Relationships: Belongs to a User.
+ * - Performance: Compound indexing on userId and date for faster history lookups.
+ */
 const transactionSchema = new mongoose.Schema(
   {
     userId: {

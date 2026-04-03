@@ -2,7 +2,12 @@ import UserModel from "../models/user.model.js";
 import catchAsync from "../utils/catchAsync.js";
 import ErrorHandler from "../utils/errorHandler.js";
 
-// 1. GET ALL USERS: Admin dekh sake system mein kitne log hain
+
+/**
+ * @desc    Get all registered users (Admin Only)
+ * @route   GET /api/admin/all-users
+ * @access  Private/Admin
+ */
 export const getAllUsers = catchAsync(async (req, res, next) => {
     // Sabhi users ko fetch karo (par password nahi)
     const users = await UserModel.find();
@@ -14,8 +19,14 @@ export const getAllUsers = catchAsync(async (req, res, next) => {
     });
 });
 
-// 2. UPDATE USER ROLE/STATUS: (As per Assignment Point #1 & #4)
-// Isse Admin kisi Viewer ko Analyst bana sakta hai ya kisi badmash user ko 'inactive'
+/**
+ * @desc    Update user role or status (Admin Only)
+ * @route   PUT /api/admin/user/:id
+ * @access  Private/Admin
+ * @param   {Object} req - Request containing {role, status} in body
+ * @param   {Object} res - Express response object
+ * @param   {Function} next - Error handler
+ */
 export const updateUserByAdmin = catchAsync(async (req, res, next) => {
     const { role, status } = req.body; 
     const { id } = req.params;
@@ -41,8 +52,12 @@ export const updateUserByAdmin = catchAsync(async (req, res, next) => {
     });
 });
 
-// 3. DELETE USER (Soft Delete): 
-// Assignment mein manage karne ko bola hai, toh delete bhi Admin hi karega
+/**
+ * @desc    Soft delete/Deactivate user (Admin Only)
+ * @route   DELETE /api/admin/user/:id
+ * @access  Private/Admin
+ * @param   {Object} req - Request containing user ID in params
+ */
 export const deleteUserByAdmin = catchAsync(async (req, res, next) => {
     
     const { id } = req.params;

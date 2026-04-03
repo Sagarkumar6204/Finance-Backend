@@ -1,11 +1,14 @@
 import UserModel from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import { generateToken } from "../utils/generateToken.js";
-import catchAsync from "../utils/catchAsync.js"; // Import kiya
-import ErrorHandler from "../utils/errorHandler.js"; // Import kiya
+import catchAsync from "../utils/catchAsync.js"; 
+import ErrorHandler from "../utils/errorHandler.js"; 
 
-// --- REGISTER ---
-// try-catch hata kar catchAsync se wrap kiya
+/**
+ * @desc    Register a new user
+ * @route   POST /api/auth/register
+ * @access  Public
+ */
 export const registerController = catchAsync(async (req, res, next) => {
     const { username, email, password, role } = req.body;
 
@@ -42,7 +45,11 @@ export const registerController = catchAsync(async (req, res, next) => {
     });
 });
 
-// --- LOGIN ---
+/**
+ * @desc    Login user & get token
+ * @route   POST /api/auth/login
+ * @access  Public
+ */
 export const loginController = catchAsync(async (req, res, next) => {
     const { email, password } = req.body;
 
@@ -84,7 +91,11 @@ if (user.status === 'inactive') {
     });
 });
 
-// --- LOGOUT ---
+/**
+ * @desc    Logout user / clear cookie
+ * @route   POST /api/auth/logout
+ * @access  Private
+ */
 export const logoutController = catchAsync(async (req, res, next) => {
     res.status(200).cookie("token", null, {
         expires: new Date(Date.now()),

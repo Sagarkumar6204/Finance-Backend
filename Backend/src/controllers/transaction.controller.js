@@ -1,17 +1,20 @@
 import TransactionModel from "../models/transaction.model.js";
 import mongoose from "mongoose";
-
 import { Parser } from 'json2csv';
-
 import ErrorHandler from "../utils/errorHandler.js";
-
 import catchAsync from "../utils/catchAsync.js";
-// 1. ADD TRANSACTION
+
+
+/**
+ * @desc    create a new transaction (Admin can assign to others via targetUserId)
+ * @route   POST /api/transactions/add
+ * @access  Private (Admin)
+ */
 export const createTransaction = catchAsync(async (req, res, next) => {
     // 1. targetUserId ko body se alag nikalo
     const { title, amount, type, category, paymentMethod, date, notes, targetUserId } = req.body;
 
-    // 2. Logic for finalUserId
+    // Admin can assign to someone else or themselves
     const finalUserId = (req.user.role === 'admin' && targetUserId) 
                         ? targetUserId 
                         : req.user._id;
@@ -35,7 +38,12 @@ export const createTransaction = catchAsync(async (req, res, next) => {
     });
 });
 
-// 2. GET ALL TRANSACTIONS (Simple List with Pagination)
+/**
+ * @desc    Get all transactions with Pagination (Role-based access) Self transactions for Viewer, Global for Admin/Analyst.
+ * @route   POST /api/transactions/all
+ * @query   page (default: 1), limit (default: 10)
+ * @access  Private (Admin/Analyst/Viewer)
+ */
 export const getTransactions = catchAsync(async (req, res, next) => {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
@@ -63,7 +71,11 @@ export const getTransactions = catchAsync(async (req, res, next) => {
     });
 });
 
-// 5. FILTER TRANSACTIONS (Alag function Date Range aur Type ke liye)
+/**
+ * @desc    Advanced Filtering for Transactions (Type, Category, Date Range)
+ * @route   GET /api/transactions/filter
+ * @access  Private(Admin/Analyst/Viewer)
+ */
 export const getFilterTransactions = catchAsync(async (req, res, next) => {
     const { type, category, startDate, endDate } = req.query;
     // 1. Pehle ek khali query object banao
@@ -110,7 +122,12 @@ export const getFilterTransactions = catchAsync(async (req, res, next) => {
 });
 
 
-// 3. UPDATE TRANSACTION
+/**
+ * @desc    Update an existing transaction (Admin Only )
+ * @route   PUT /api/transactions/update/:id
+ * @access  Private (Admin only)
+ * @param   {String} id - Transaction ID in params
+ */
 export const updateTransaction = catchAsync(async (req, res, next) => {
     const { id } = req.params;
     
@@ -132,7 +149,12 @@ export const updateTransaction = catchAsync(async (req, res, next) => {
     });
 });
 
-// 4. DELETE TRANSACTION
+/**
+ * @desc    Delete a transaction (Admin Only)
+ * @route   DELETE /api/transactions/delete/:id
+ * @access  Private (Admin only)
+ * @param   {String} id - Transaction ID in params
+ */
 export const deleteTransaction = catchAsync(async (req, res, next) => {
     const { id } = req.params;
 
@@ -148,7 +170,14 @@ export const deleteTransaction = catchAsync(async (req, res, next) => {
         message: "Transaction deleted by Admin successfully" 
     });
 });
-// 5. GET STATS (Aggregation)
+
+
+
+/**
+ * @desc    Get Financial Analytics/Stats (Income, Expense, Category Breakdown) Self data for Viewer, Global for Admin/Analyst.
+ * @route   GET /api/transactions/stats 
+ * @access  Private (Admin/Analyst/Viewer)
+ */
 export const getTransactionStats = catchAsync(async (req, res, next) => {
     let matchQuery = {};
     if (req.user.role === 'viewer') {
@@ -210,7 +239,14 @@ export const getTransactionStats = catchAsync(async (req, res, next) => {
         data: stats
     });
 });
-// 6. EXPORT TRANSACTIONS
+
+
+
+/**
+ * @desc    Export Transactions to CSV (Self data for Viewer, Global for Admin/Analyst)
+ * @route   GET /api/transactions/export
+ * @access  Private (Admin, Analyst, Viewer)
+ */
 export const exportTransactions = catchAsync(async (req, res, next) => {
 
       let query = {}; 
@@ -233,37 +269,3 @@ export const exportTransactions = catchAsync(async (req, res, next) => {
     return res.send(csv);
 });
 
-// 2. GET TRANSACTIONS (With Pagination & Filters)
-// export const getTransactionssss = catchAsync(async (req, res, next) => {
-//     const page = parseInt(req.query.page) || 1;
-//     const limit = parseInt(req.query.limit) || 10;
-//     const skip = (page - 1) * limit;
-
-//     const query = { userId: req.user._id };
-
-//     if (req.query.type) query.type = req.query.type;
-//     if (req.query.category) query.category = req.query.category;
-    
-//     // Date filter logic
-//     if (req.query.startDate && req.query.endDate) {
-//         query.date = { 
-//             $gte: new Date(req.query.startDate), 
-//             $lte: new Date(req.query.endDate) 
-//         };
-//     }
-
-//     const transactions = await TransactionModel.find(query)
-//         .sort({ date: -1 })
-//         .skip(skip)
-//         .limit(limit);
-
-//     const total = await TransactionModel.countDocuments(query);
-
-//     res.status(200).json({
-//         success: true,
-//         count: transactions.length,
-//         totalPages: Math.ceil(total / limit),
-//         currentPage: page,
-//         data: transactions
-//     });
-// });
