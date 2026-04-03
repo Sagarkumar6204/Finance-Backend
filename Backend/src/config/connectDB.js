@@ -55,7 +55,7 @@ const seedAdmin = async () => {
             const password = process.env.ADMIN_PASSWORD; 
             await UserModel.create({
                 username: "Admin",
-                email: "admin@gmail.com", 
+                email: process.env.ADMIN_EMAIL, 
                 password: await bcrypt.hash(password, 10),
                 role: "admin"
             });
