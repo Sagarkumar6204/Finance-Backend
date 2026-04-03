@@ -5,6 +5,9 @@
 Base URL: https://finance-backend-yirw.onrender.com
 > This backend is fully deployed and ready for testing using Postman.
 
+> Note: This API is hosted on a free-tier service. As a result, the first request may take a few seconds due to server cold starts. Subsequent requests will be faster.
+
+
 A scalable and production-grade backend system designed for managing financial transactions with **secure authentication**, **Role-Based & Permission-Based Access Control**, and **high-performance data processing**.
 
  This project demonstrates strong fundamentals in:
