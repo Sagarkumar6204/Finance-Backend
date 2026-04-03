@@ -26,6 +26,9 @@ app.use(cors({
    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
 app.use("/api/auth",authRouter);
 app.use("/api/transactions",transactionRouter);
 app.use("/api/admin",adminRouter); // Admin routes
