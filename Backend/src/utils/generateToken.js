@@ -34,7 +34,7 @@ export const generateToken = (res, userId, role, name) => {
     const cookieOptions = {
         httpOnly: true, 
         secure: process.env.NODE_ENV === "production", 
-        sameSite: "lax", 
+        sameSite: "none", //use "lax" for development
         maxAge: 24 * 60 * 60 * 1000, 
     };
 
