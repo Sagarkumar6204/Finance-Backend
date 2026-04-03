@@ -1,5 +1,9 @@
 #  Finance Data Processing and Access Control Backend
 
+## 🚀 Live API
+
+Base URL: https://finance-backend-yirw.onrender.com
+
 A scalable and production-grade backend system designed for managing financial transactions with **secure authentication**, **Role-Based & Permission-Based Access Control**, and **high-performance data processing**.
 
  This project demonstrates strong fundamentals in:
@@ -485,7 +489,7 @@ Now you can test all endpoints:
 After deployment, update the `base_url` variable in Postman:
 
 ```bash
-https://your-deployed-api.com/api
+https://finance-backend-yirw.onrender.com
 ```
 
 #### 📂 Step 2: Import Postman Collection
