@@ -136,7 +136,7 @@ authorize('create:record')
 - Secure session handling via **HTTP-only cookies**  
 - Password hashing using bcrypt  
 - Protection against **XSS & session hijacking**  
-- 🛡️ Login Rate Limiting (Brute-force Protection)
+- Login Rate Limiting (Brute-force Protection)
 - Prevents multiple failed login attempts to secure user accounts from brute-force attacks.
 
   
