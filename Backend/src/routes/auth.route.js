@@ -3,6 +3,7 @@ import { loginController, logoutController, registerController } from "../contro
 import authenticate from "../middlewares/auth.middleware.js";
 import validate from "../middlewares/authValidate.middleware.js";
 import { loginSchema, registerSchema } from "../validators/auth.validator.js";
+import { loginLimiter } from "../middlewares/loginLimit.middleware.js";
 
 /**
  * @desc    Authentication Router
@@ -20,7 +21,7 @@ const authRouter=express.Router();
  * @access  Public
  * @control validate(loginSchema) - Prevents malformed login attempts.
  */
-authRouter.post("/login",validate(loginSchema),loginController);
+authRouter.post("/login",loginLimiter,validate(loginSchema),loginController);
 
 /**
  * @route   POST /api/auth/register

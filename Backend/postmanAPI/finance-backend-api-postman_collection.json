@@ -20,26 +20,24 @@
               },
               "request": {
                 "auth": {
-                  "type": "noauth"
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
                 },
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/filter?type=expense",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/filter?type=expense",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -63,21 +61,24 @@
               },
               "request": {
                 "auth": {
-                  "type": "noauth"
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
                 },
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/filter?category=food",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/filter?category=food",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -101,21 +102,24 @@
               },
               "request": {
                 "auth": {
-                  "type": "noauth"
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
                 },
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/filter?startDate=2026-03-20&endDate=2026-05-30",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/filter?startDate=2026-03-20&endDate=2026-05-30",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -148,19 +152,25 @@
                 "disableBodyPruning": true
               },
               "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
-                },
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/stats",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/stats",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -174,15 +184,25 @@
             {
               "name": "Export-Transaction",
               "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
                 "method": "GET",
                 "header": [],
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/export",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/export",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -199,19 +219,25 @@
                 "disableBodyPruning": true
               },
               "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
-                },
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/all",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/all",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -232,7 +258,14 @@
               "name": "Analyst-Not-Manage-User",
               "request": {
                 "auth": {
-                  "type": "noauth"
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
                 },
                 "method": "PUT",
                 "header": [],
@@ -246,12 +279,12 @@
                   }
                 },
                 "url": {
-                  "raw": "http://localhost:3000/api/admin/user/:id",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/admin/user/:id",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "admin",
@@ -272,6 +305,16 @@
             {
               "name": "Analyst-Not-Update-Transaction",
               "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
                 "method": "PUT",
                 "header": [],
                 "body": {
@@ -284,12 +327,12 @@
                   }
                 },
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/update/:id",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/update/:id",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -311,7 +354,14 @@
               "name": "Analyst-Not-Delete-Transaction",
               "request": {
                 "auth": {
-                  "type": "noauth"
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
                 },
                 "method": "DELETE",
                 "header": [],
@@ -320,12 +370,12 @@
                   "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
                 },
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/delete/:id",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/delete/:id",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -346,6 +396,16 @@
             {
               "name": "Analyst-Not-Add-Transaction",
               "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
                 "method": "POST",
                 "header": [],
                 "body": {
@@ -358,12 +418,12 @@
                   }
                 },
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/add",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/add",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -393,26 +453,24 @@
               },
               "request": {
                 "auth": {
-                  "type": "noauth"
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
                 },
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/filter?type=expense",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/filter?type=expense",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -436,21 +494,24 @@
               },
               "request": {
                 "auth": {
-                  "type": "noauth"
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
                 },
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
-                },
                 "url": {
-                  "raw": "http://localhost:3000/api/transactions/filter?category=food",
-                  "protocol": "http",
+                  "raw": "{{base_url}}/api/transactions/filter?category=food",
+                  "protocol": "https",
                   "host": [
-                    "localhost"
+                    "{{base_url}}"
                   ],
-                  "port": "3000",
+                  "port": "443",
                   "path": [
                     "api",
                     "transactions",
@@ -474,662 +535,779 @@
                 "disableBodyPruning": true
               },
               "request": {
-                "auth": {
-                  "type": "noauth"
-                },
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/filter?startDate=2026-03-20&endDate=2026-05-30",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "filter"
-                  ],
-                  "query": [
-                    {
-                      "key": "startDate",
-                      "value": "2026-03-20",
-                      "type": "text"
-                    },
-                    {
-                      "key": "endDate",
-                      "value": "2026-05-30",
-                      "type": "text"
-                    }
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[GET\\] Filter-ByDate**\n\n- **Method:** `GET`\n    \n- **Endpoint:** `/api/transactions/filter`\n    \n- **Query Parameters:** `startDate=2024-01-01&endDate=2024-12-31`\n    \n- **Description:** Retrieves all global records within a specific fiscal period.\n    \n- **Technical Implementation:** Executes **Range-Based Queries** (`$gte` & `$lte`) on a **Time-Series Index**. This ensures that the database performs an efficient \"Range Scan\" instead of a slow \"Full Collection Scan,\" maintaining high availability during peak auditing hours.\n    \n\nEndFragment"
-              },
-              "response": []
-            }
-          ],
-          "description": "StartFragment\n\nEnables high-speed, global data retrieval across the entire organizational database for administrative oversight.\n\n**Technical Implementation:** Optimized using **Compound Indexing** on `category`, `type`, and `date` fields. The backend dynamically builds **Mongoose Queries** to handle multiple filter combinations (e.g., specific user + specific category + date range), ensuring **O(1) to O(log N) lookup performance** even as the transaction volume scales to millions of records.\n\nEndFragment"
-        },
-        {
-          "name": "Admin-Access",
-          "item": [
-            {
-              "name": "Add-Transaction",
-              "request": {
-                "method": "POST",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 75000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"notes\": \"March month salary credited (sagar's Id)\",\r\n  \"targetUserId\": \"69cf8b35aebbdfef86fb788f\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
                   }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/add",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "add"
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[POST\\] Add-Transaction**\n\n- **Method:** `POST`\n    \n- **Endpoint:** `/api/transactions/add`\n    \n- **Description:** Creates a new financial record. Admins can create transactions for themselves or on behalf of other users using the `targetUserId`.\n    \n- **Technical Implementation:** Implements **Administrative Proxy Logic**. The backend checks if a `targetUserId` is provided; if yes, it attributes the record to that specific user ID. It uses **Joi Schema Validation** to ensure data types (Number, Date, String) are strictly followed before hitting MongoDB.\n    \n\n#### **Request Body (JSON Example):**\n\nJSON\n\n```\n{\n  \"title\": \"Monthly Salary\",\n  \"amount\": 75000,\n  \"type\": \"income\",\n  \"category\": \"salary\",\n  \"paymentMethod\": \"online\",\n  \"notes\": \"March month salary credited (sagar's Id)\",\n  \"targetUserId\": \"69cf8b35aebbdfef86fb788f\"\n}\n\n ```\n\n#### **Success Response (201 Created):**\n\n```\n{\n    \"success\": true,\n    \"message\": \"Transaction assigned to user!\",\n    \"data\": {\n        \"userId\": \"69cf8b35aebbdfef86fb788f\",\n        \"title\": \"Monthly Salary\",\n        \"amount\": 75000,\n        \"type\": \"income\",\n        \"category\": \"salary\",\n        \"paymentMethod\": \"online\",\n        \"date\": \"2026-04-03T10:11:05.050Z\",\n        \"notes\": \"March month salary credited (sagar's Id)\",\n        \"_id\": \"69cf9239aebbdfef86fb78a1\",\n        \"createdAt\": \"2026-04-03T10:11:05.054Z\",\n        \"updatedAt\": \"2026-04-03T10:11:05.054Z\",\n        \"__v\": 0,\n        \"id\": \"69cf9239aebbdfef86fb78a1\"\n    }\n}\n\n ```\n\nEndFragment"
+                ]
               },
-              "response": []
-            },
-            {
-              "name": "Update-Transaction",
-              "request": {
-                "method": "PUT",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n\r\n  \"amount\": 120\r\n\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
+              "method": "GET",
+              "header": [],
+              
+              "url": {
+                "raw": "{{base_url}}/api/transactions/filter?startDate=2026-03-20&endDate=2026-05-30",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "filter"
+                ],
+                "query": [
+                  {
+                    "key": "startDate",
+                    "value": "2026-03-20",
+                    "type": "text"
+                  },
+                  {
+                    "key": "endDate",
+                    "value": "2026-05-30",
+                    "type": "text"
                   }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/update/:id",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "update",
-                    ":id"
-                  ],
-                  "variable": [
-                    {
-                      "key": "id",
-                      "value": "69cf93fcaebbdfef86fb78b5"
-                    }
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[PUT\\] Update-Transaction**\n\n- **Method:** `PUT`\n    \n- **Endpoint:** `/api/transactions/update/:id`\n    \n- **Parameters:** `id` (Path Variable - The Transaction ID)\n    \n- **Description:** Updates an existing transaction. Admins have \"Overriding Authority\" to modify any record in the system.\n    \n- **Parameters:** `id` (Path Variable - The Transaction ID)\n    \n- **Technical Implementation:** Uses the **Atomic Update Pattern** via `findByIdAndUpdate`. It ensures **Data Integrity** by validating that the `amount` remains a positive number and the `type` stays within the 'income' or 'expense' enum.\n    \n- **Request Body (JSON Example):**\n    \n\nJSON\n\n``` bash\n{\n  \"amount\": 120\n}\n\n ```\n\n### Success Response( 200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"message\": \"Transaction updated successfully!\",\n    \"data\": {\n        \"_id\": \"69cf93fcaebbdfef86fb78b5\",\n        \"userId\": \"69cf8e9aaebbdfef86fb7896\",\n        \"title\": \"Dinner Order\",\n        \"amount\": 120,\n        \"type\": \"expense\",\n        \"category\": \"food\",\n        \"paymentMethod\": \"card\",\n        \"date\": \"2026-04-03T10:18:36.685Z\",\n        \"notes\": \"Late night pizza party (bittu's Id)\",\n        \"createdAt\": \"2026-04-03T10:18:36.686Z\",\n        \"updatedAt\": \"2026-04-03T10:19:59.522Z\",\n        \"__v\": 0,\n        \"id\": \"69cf93fcaebbdfef86fb78b5\"\n    }\n}\n\n ```\n\nEndFragment"
+                ]
               },
-              "response": []
+              "description": "StartFragment\n\n#### **\\[GET\\] Filter-ByDate**\n\n- **Method:** `GET`\n    \n- **Endpoint:** `/api/transactions/filter`\n    \n- **Query Parameters:** `startDate=2024-01-01&endDate=2024-12-31`\n    \n- **Description:** Retrieves all global records within a specific fiscal period.\n    \n- **Technical Implementation:** Executes **Range-Based Queries** (`$gte` & `$lte`) on a **Time-Series Index**. This ensures that the database performs an efficient \"Range Scan\" instead of a slow \"Full Collection Scan,\" maintaining high availability during peak auditing hours.\n    \n\nEndFragment"
             },
-            {
-              "name": "Delete-Transaction",
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui thi\"\r\n}"
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/delete/:id",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "delete",
-                    ":id"
-                  ],
-                  "variable": [
-                    {
-                      "key": "id",
-                      "value": "69cf933faebbdfef86fb78a8"
-                    }
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[DELETE\\] Delete-Transaction**\n\n- **Method:** `DELETE`\n    \n- **Endpoint:** `/api/transactions/delete/:id`\n    \n- **Parameters:** `id` (Path Variable - The Transaction ID)\n    \n- **Description:** Permanently removes a specific transaction from the database.\n    \n- **Technical Implementation:** Protected by the `delete:record` permission. It executes a **Hard Delete** to keep the database clean after administrative review, ensuring the ledger remains accurate.\n    \n\n### Success Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"message\": \"Transaction deleted by Admin successfully\"\n}\n\n ```\n\nEndFragment"
-              },
-              "response": []
-            },
-            {
-              "name": "Get-All-User",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n \"role\":\"viewer\",\r\n \"status\":\"inactive\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
+            "response": []
+          }
+        ],
+        "description": "StartFragment\n\nEnables high-speed, global data retrieval across the entire organizational database for administrative oversight.\n\n**Technical Implementation:** Optimized using **Compound Indexing** on `category`, `type`, and `date` fields. The backend dynamically builds **Mongoose Queries** to handle multiple filter combinations (e.g., specific user + specific category + date range), ensuring **O(1) to O(log N) lookup performance** even as the transaction volume scales to millions of records.\n\nEndFragment"
+      },
+      {
+        "name": "Admin-Access",
+        "item": [
+          {
+            "name": "Add-Transaction",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
                   }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/admin/all-users",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "admin",
-                    "all-users"
-                  ]
-                },
-                "description": "StartFragment\n\n### **\\[GET\\] Get-All-User**\n\n- **Method:** `GET`\n    \n- **Endpoint:** `/api/admin/all-users`\n    \n- **Description:** Retrieves a comprehensive, paginated list of all registered users in the system for administrative auditing and governance.\n    \n- **Technical Implementation:**\n    \n    - **Administrative Oversight:** Provides a \"Global Identity View\" that includes active, inactive, and soft-deleted accounts.\n        \n    - **Database Pagination:** Implements `.limit()` and `.skip()` at the MongoDB level. This is a **Performance Best Practice** to handle large user bases efficiently, preventing memory spikes in the Node.js environment.\n        \n    - **Permission Gate:** Strictly protected by the `manage:users` permission. The middleware ensures that only a high-level Administrator can access this sensitive directory of user data.\n        \n\n**Query Parameters (Optional):**\n\n- `page`: (Number) e.g., `1, default=1`\n    \n- `limit`: (Number) e.g., `10, default=10`\n    \n\n### Success Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"count\": 4,\n    \"totalUsers\": 4,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"users\": [\n        {\n            \"_id\": \"69cf8eb0aebbdfef86fb7899\",\n            \"username\": \"niraj\",\n            \"email\": \"niraj@gmail.com\",\n            \"role\": \"viewer\",\n            \"status\": \"active\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2026-04-03T09:56:00.867Z\",\n            \"updatedAt\": \"2026-04-03T09:56:00.867Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69cf8e9aaebbdfef86fb7896\",\n            \"username\": \"bittu\",\n            \"email\": \"bittu@gmail.com\",\n            \"role\": \"viewer\",\n            \"status\": \"active\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2026-04-03T09:55:38.967Z\",\n            \"updatedAt\": \"2026-04-03T09:55:38.967Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69cf8b35aebbdfef86fb788f\",\n            \"username\": \"Sagar Kumar\",\n            \"email\": \"sagar@example.com\",\n            \"role\": \"viewer\",\n            \"status\": \"active\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2026-04-03T09:41:09.284Z\",\n            \"updatedAt\": \"2026-04-03T09:41:09.284Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69cf867d6cb53b56870e65a0\",\n            \"username\": \"Admin\",\n            \"email\": \"admin@gmail.com\",\n            \"role\": \"admin\",\n            \"status\": \"active\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2026-04-03T09:21:01.465Z\",\n            \"updatedAt\": \"2026-04-03T09:21:01.465Z\",\n            \"__v\": 0\n        }\n    ]\n}\n\n ```\n\nEndFragment"
+                ]
               },
-              "response": []
-            },
-            {
-              "name": "Get-Transaction-Stats",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/stats",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "stats"
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[GET\\] Get-Transaction-Stats (Global Analytics)**\n\n- **Method:** `GET`\n    \n- **Endpoint:** `/api/transactions/stats`\n    \n- **Description:** Generates a platform-wide financial summary, including total organizational balance, income vs. expense ratios, and category-wise spending.\n    \n- **Technical Implementation:** Powered by a **Multi-Stage MongoDB Aggregation Pipeline**. It performs `$match`, `$group`, and `$sort` at the **Database Level**. This offloads all heavy mathematical calculations to the database engine, keeping the Node.js server **Stateless and Scalable**.\n    \n\n### Success Response (200 OK):\n\n```\n{\n    \"success\": true,\n    \"message\": \"Detailed Global Stats\",\n    \"data\": {\n        \"summary\": {\n            \"totalIncome\": 108000,\n            \"totalExpense\": 1390,\n            \"netBalance\": 106610,\n            \"totalTransactions\": 6\n        },\n        \"averages\": {\n            \"avgIncome\": 36000,\n            \"avgExpense\": 463\n        },\n        \"counts\": {\n            \"incomeCount\": 3,\n            \"expenseCount\": 3\n        },\n        \"categoryBreakdown\": [\n            {\n                \"_id\": \"others\",\n                \"totalSpent\": 850,\n                \"transactionCount\": 1\n            },\n            {\n                \"_id\": \"shopping\",\n                \"totalSpent\": 420,\n                \"transactionCount\": 1\n            },\n            {\n                \"_id\": \"food\",\n                \"totalSpent\": 120,\n                \"transactionCount\": 1\n            }\n        ]\n    }\n}\n\n ```\n\nEndFragment"
-              },
-              "response": []
-            },
-            {
-              "name": "Export-Transaction",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/export",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "export"
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[GET\\] Export-Transaction (Global Data Dump)**\n\n- **Method:** `GET`\n    \n- **Endpoint:** `/api/transactions/export`\n    \n- **Description:** Generates and downloads a complete CSV report of all transactions for administrative auditing.\n    \n- **Technical Implementation:** Implements **Node.js Streams** (Readable Stream from MongoDB ➔ CSV Transform ➔ Writable Stream to HTTP Response). This \"Buffer-free\" approach ensures that the server can export GBs of data without crashing its RAM, providing **Enterprise-Grade Reliability**.\n    \n\nEndFragment"
-              },
-              "response": []
-            },
-            {
-              "name": "Get-All-Transaction",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/all",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "all"
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[GET\\] Get-All-Transaction (Global Ledger)**\n\n- **Method:** `GET`\n    \n- **Endpoint:** `/api/transactions/all`\n    \n- **Query Parameters:** `page=1`, `limit=10`\n    \n- **Description:** Retrieves a master list of every financial record across all users in the system.\n    \n- **Technical Implementation:** Unlike the Viewer role, this endpoint removes the `userId` restriction. It uses **Server-Side Pagination** (`.limit()` and `.skip()`) to ensure that fetching millions of records doesn't cause a \"Heap Out of Memory\" error in Node.js.\n    \n- **Security:** Only accessible via a JWT with `role: \"admin\"`.\n    \n\n### Success Response (200 OK):\n\n```\n{\n    \"success\": true,\n    \"count\": 6,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"data\": [\n        {\n            \"_id\": \"69cf93fcaebbdfef86fb78b5\",\n            \"userId\": {\n                \"_id\": \"69cf8e9aaebbdfef86fb7896\",\n                \"username\": \"bittu\",\n                \"email\": \"bittu@gmail.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Dinner Order\",\n            \"amount\": 120,\n            \"type\": \"expense\",\n            \"category\": \"food\",\n            \"paymentMethod\": \"card\",\n            \"date\": \"2026-04-03T10:18:36.685Z\",\n            \"notes\": \"Late night pizza party (bittu's Id)\",\n            \"createdAt\": \"2026-04-03T10:18:36.686Z\",\n            \"updatedAt\": \"2026-04-03T10:19:59.522Z\",\n            \"__v\": 0,\n            \"id\": \"69cf93fcaebbdfef86fb78b5\"\n        },\n        {\n            \"_id\": \"69cf93e5aebbdfef86fb78b2\",\n            \"userId\": {\n                \"_id\": \"69cf8e9aaebbdfef86fb7896\",\n                \"username\": \"bittu\",\n                \"email\": \"bittu@gmail.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Apollo Pharmacy\",\n            \"amount\": 850,\n            \"type\": \"expense\",\n            \"category\": \"others\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:18:13.422Z\",\n            \"notes\": \"Regular vitamins and medicines (bittu's Id)\",\n            \"createdAt\": \"2026-04-03T10:18:13.422Z\",\n            \"updatedAt\": \"2026-04-03T10:18:13.422Z\",\n            \"__v\": 0,\n            \"id\": \"69cf93e5aebbdfef86fb78b2\"\n        },\n        {\n            \"_id\": \"69cf93beaebbdfef86fb78ae\",\n            \"userId\": {\n                \"_id\": \"69cf8e9aaebbdfef86fb7896\",\n                \"username\": \"bittu\",\n                \"email\": \"bittu@gmail.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Sold iPhone 11\",\n            \"amount\": 18000,\n            \"type\": \"income\",\n            \"category\": \"salary\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:17:34.783Z\",\n            \"notes\": \"Sold to a local buyer (bittu's Id)\",\n            \"createdAt\": \"2026-04-03T10:17:34.784Z\",\n            \"updatedAt\": \"2026-04-03T10:17:34.784Z\",\n            \"__v\": 0,\n            \"id\": \"69cf93beaebbdfef86fb78ae\"\n        },\n        {\n            \"_id\": \"69cf936daebbdfef86fb78ab\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"TCS Dividend\",\n            \"amount\": 15000,\n            \"type\": \"income\",\n            \"category\": \"investment\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:16:13.546Z\",\n            \"notes\": \"Quarterly dividend income(sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:16:13.547Z\",\n            \"updatedAt\": \"2026-04-03T10:16:13.547Z\",\n            \"__v\": 0,\n            \"id\": \"69cf936daebbdfef86fb78ab\"\n        },\n        {\n            \"_id\": \"69cf92f7aebbdfef86fb78a4\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Big Bazaar Grocery\",\n            \"amount\": 420,\n            \"type\": \"expense\",\n            \"category\": \"shopping\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:14:15.510Z\",\n            \"notes\": \"Monthly ration and snacks (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:14:15.511Z\",\n            \"updatedAt\": \"2026-04-03T10:14:15.511Z\",\n            \"__v\": 0,\n            \"id\": \"69cf92f7aebbdfef86fb78a4\"\n        },\n        {\n            \"_id\": \"69cf9239aebbdfef86fb78a1\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Monthly Salary\",\n            \"amount\": 75000,\n            \"type\": \"income\",\n            \"category\": \"salary\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:11:05.050Z\",\n            \"notes\": \"March month salary credited (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:11:05.054Z\",\n            \"updatedAt\": \"2026-04-03T10:11:05.054Z\",\n            \"__v\": 0,\n            \"id\": \"69cf9239aebbdfef86fb78a1\"\n        }\n    ]\n}\n\n ```\n\nEndFragment"
-              },
-              "response": []
-            },
-            {
-              "name": "Delete-User",
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/admin/user/:id",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "admin",
-                    "user",
-                    ":id"
-                  ],
-                  "variable": [
-                    {
-                      "key": "id",
-                      "value": "69cf8eb0aebbdfef86fb7899"
-                    }
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[DELETE\\] Delete-User (Soft Delete)**\n\n- **Method:** `DELETE`\n    \n- **Endpoint:** `/api/admin/user/:id`\n    \n- **Parameters:** `id` (Path Variable - The User ID)\n    \n- **Description:** Deactivates and archives a user account from the system.\n    \n- **Technical Implementation:** Uses the **Soft-Delete Design Pattern**. Instead of a destructive `remove()`, the backend updates the user's `isDeleted` flag to `true`. This is a **Critical FinTech Requirement** to maintain historical data for **Regulatory Audits** while revoking user access.\n    \n\n### Success Response (200 OK):\n\n```\n{\n    \"success\": true,\n    \"message\": \"User has been deactivated/deleted by Admin\"\n}\n\n ```\n\nEndFragment"
-              },
-              "response": []
-            },
-            {
-              "name": "Change-Priviliges",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
-                "method": "PUT",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n \"role\":\"analyst\",\r\n \"status\":\"active\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
+              "method": "POST",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 75000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"notes\": \"March month salary credited (sagar's Id)\",\r\n  \"targetUserId\": \"69cf8b35aebbdfef86fb788f\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
                   }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/admin/user/:id",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "admin",
-                    "user",
-                    ":id"
-                  ],
-                  "variable": [
-                    {
-                      "key": "id",
-                      "value": "69cf8eb0aebbdfef86fb7899"
-                    }
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[PUT\\] Change-Privileges**\n\n- **Method:** `PUT`\n    \n- **Endpoint:** `/api/admin/user/:id`\n    \n- **Parameters:** `id` (Path Variable - The User ID)\n    \n- **Description:** Updates a user's system role or account status (Active/Inactive).\n    \n- **Technical Implementation:** Core **Identity Governance** logic. It allows Admins to manage the RBAC (Role-Based Access Control) hierarchy.\n    \n- **Request Body (JSON Example):**\n    \n\nJSON\n\n```\n{\n \"role\":\"analyst\",\n \"status\":\"active\"\n}\n\n ```\n\n### Success Resposne(200 OK):\n\n```\n{\n    \"success\": true,\n    \"message\": \"User niraj is now analyst and active\",\n    \"user\": {\n        \"_id\": \"69cf8eb0aebbdfef86fb7899\",\n        \"username\": \"niraj\",\n        \"email\": \"niraj@gmail.com\",\n        \"role\": \"analyst\",\n        \"status\": \"active\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-04-03T09:56:00.867Z\",\n        \"updatedAt\": \"2026-04-03T10:39:27.270Z\",\n        \"__v\": 0\n    }\n}\n\n ```\n\nEndFragment"
-              },
-              "response": []
-            }
-          ],
-          "description": "StartFragment\n\nProvides the highest level of authorization, allowing for complete **User Lifecycle Management** and unrestricted record manipulation. This folder is the core of the platform's security and regulatory compliance.\n\n#### **Features:**\n\n- **Identity Bootstrapping (Auto-Seeding):**\n    \n    - To maintain a \"Secure-by-Default\" environment, the **Master Admin** is never created through a public registration form.\n        \n    - The system implements an automated **Data Seeding** script that triggers during the initial database connection. If no administrator is detected, the backend instantly initializes a Root Admin account using protected Environment Variables.\n        \n    - This ensures the system is **Self-Healing** and maintains a clear chain of command from the very first second of deployment.\n        \n- **RBAC Strategy Pattern:**\n    \n    - This folder demonstrates **Command-and-Control** backend logic. It implements the **Strategy Pattern for Role-Based Access Control (RBAC)**, allowing Admins to perform high-stakes operations like promoting Viewers to Analysts or managing User Governance (activating/deactivating accounts).\n        \n- **Soft-Delete Mechanism (Regulatory Compliance):**\n    \n    - For financial records and user accounts, the system avoids permanent data destruction. Instead, it utilizes a **Soft Delete** mechanism (`isDeleted: true`).\n        \n    - **The Logic:** This ensures that sensitive financial data remains available for **Regulatory Audits** and forensic accounting while being effectively hidden from active business views and the frontend dashboard.\n        \n\nEndFragment"
-        }
-      ],
-      "description": "StartFragment\n\nThe **Admin Tier** represents the highest level of authorization in the system. The Admin role is granted the `manage:users` and `full:access` permissions. This allows for governance over the user base (activating/deactivating accounts) and full lifecycle management (CRUD) of financial records. This folder demonstrates the **Command-and-Control** capabilities of the backend.\n\n**Technical Implementation:** This folder showcases **Database-Level Processing**. All summary statistics and trends are calculated using **MongoDB Aggregation Pipelines** (`$match`, `$group`, `$sum`). By offloading heavy math to the DB engine, we ensure the Node.js server maintains a **zero-memory footprint** during large-scale data analysis.  \n  \n\nEndFragment"
-    },
-    {
-      "name": "Viewer-Role",
-      "item": [
-        {
-          "name": "Filter-Transaction",
-          "item": [
-            {
-              "name": "Filter-Expense",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/filter?type=expense",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "filter"
-                  ],
-                  "query": [
-                    {
-                      "key": "type",
-                      "value": "expense"
-                    }
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[GET\\] Filter-Expense**\n\n- **Endpoint:** `/api/transactions/filter`\n    \n- **Query Parameters:** `type=expense` (or `type=income`)\n    \n- **Description:** Filters the user's personal records specifically by the transaction type.\n    \n- **Technical Implementation:** Utilizes **Dynamic Query Building**. It combines the authenticated `userId` with the `type` parameter. The backend is optimized with a **Compound Index** on `[userId + type]`, ensuring that the search complexity remains **O(log N)**, providing sub-millisecond response times.\n    \n\n### Success Response (200 OK):\n\n```\n{\n    \"success\": true,\n    \"count\": 1,\n    \"data\": [\n        {\n            \"_id\": \"69cf92f7aebbdfef86fb78a4\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\"\n            },\n            \"title\": \"Big Bazaar Grocery\",\n            \"amount\": 420,\n            \"type\": \"expense\",\n            \"category\": \"shopping\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:14:15.510Z\",\n            \"notes\": \"Monthly ration and snacks (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:14:15.511Z\",\n            \"updatedAt\": \"2026-04-03T10:14:15.511Z\",\n            \"__v\": 0,\n            \"id\": \"69cf92f7aebbdfef86fb78a4\"\n        }\n    ]\n}\n\n ```\n\nEndFragment"
-              },
-              "response": []
-            },
-            {
-              "name": "Filter-Category",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/filter?category=food",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "filter"
-                  ],
-                  "query": [
-                    {
-                      "key": "category",
-                      "value": "food",
-                      "type": "text"
-                    }
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[GET\\] Filter-Category**\n\n- **Endpoint:** `/api/transactions/filter`\n    \n- **Query Parameters:** `category=Food`\n    \n- **Description:** Filters the user's personal ledger based on specific financial categories.\n    \n- **Technical Implementation:** Implements **Categorical Indexing**. The controller sanitizes the input and executes a scoped search within the user's document collection. This allows for quick insights into spending habits without the overhead of fetching unrelated data.\n    \n\n## Success Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"message\": \"No transactions found for these filters\",\n    \"data\": []\n}\n\n ```\n\nEndFragment"
-              },
-              "response": []
-            },
-            {
-              "name": "Filter-ByDate",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/filter?startDate=2026-03-20&endDate=2026-05-30",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "filter"
-                  ],
-                  "query": [
-                    {
-                      "key": "startDate",
-                      "value": "2026-03-20",
-                      "type": "text"
-                    },
-                    {
-                      "key": "endDate",
-                      "value": "2026-05-30",
-                      "type": "text"
-                    }
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[GET\\] Filter-Category**\n\n- **Endpoint:** `/api/transactions/filter`\n    \n- **Query Parameters:** `category=Food`\n    \n- **Description:** Filters the user's personal ledger based on specific financial categories.\n    \n- **Technical Implementation:** Implements **Categorical Indexing**. The controller sanitizes the input and executes a scoped search within the user's document collection. This allows for quick insights into spending habits without the overhead of fetching unrelated data.\n    \n\n### Success Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"count\": 3,\n    \"data\": [\n        {\n            \"_id\": \"69cf936daebbdfef86fb78ab\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\"\n            },\n            \"title\": \"TCS Dividend\",\n            \"amount\": 15000,\n            \"type\": \"income\",\n            \"category\": \"investment\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:16:13.546Z\",\n            \"notes\": \"Quarterly dividend income(sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:16:13.547Z\",\n            \"updatedAt\": \"2026-04-03T10:16:13.547Z\",\n            \"__v\": 0,\n            \"id\": \"69cf936daebbdfef86fb78ab\"\n        },\n        {\n            \"_id\": \"69cf92f7aebbdfef86fb78a4\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\"\n            },\n            \"title\": \"Big Bazaar Grocery\",\n            \"amount\": 420,\n            \"type\": \"expense\",\n            \"category\": \"shopping\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:14:15.510Z\",\n            \"notes\": \"Monthly ration and snacks (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:14:15.511Z\",\n            \"updatedAt\": \"2026-04-03T10:14:15.511Z\",\n            \"__v\": 0,\n            \"id\": \"69cf92f7aebbdfef86fb78a4\"\n        },\n        {\n            \"_id\": \"69cf9239aebbdfef86fb78a1\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\"\n            },\n            \"title\": \"Monthly Salary\",\n            \"amount\": 75000,\n            \"type\": \"income\",\n            \"category\": \"salary\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:11:05.050Z\",\n            \"notes\": \"March month salary credited (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:11:05.054Z\",\n            \"updatedAt\": \"2026-04-03T10:11:05.054Z\",\n            \"__v\": 0,\n            \"id\": \"69cf9239aebbdfef86fb78a1\"\n        }\n    ]\n}\n\n ```\n\nEndFragment"
-              },
-              "response": []
-            }
-          ],
-          "description": "StartFragment\n\nEnables users to manage and search through their personal transaction history using high-performance filters.\n\n**Technical Implementation:** Uses **Dynamic Query Building** in Mongoose. All filters (Category, Date Range) are combined with a mandatory `{ userId: req.user.id }` clause. These queries hit **Compound Indexes** in MongoDB, providing **O(log N) lookup performance**. This ensures that even as a user's personal history grows to thousands of records, the dashboard remains lag-free.\n\nEndFragment"
-        },
-        {
-          "name": "Viewer-Access",
-          "item": [
-            {
-              "name": "Get-All-Personal-Transaction",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui\"\r\n}"
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/all",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "all"
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[GET\\] /api/transactions/all**\n\n- **Description:** Retrieves a paginated list of all financial records belonging specifically to the authenticated user.\n    \n- **Query Parameters:** `page=1&limit=10.`\n    \n- **Technical Implementation:** Implements **Server-Side Pagination**. Instead of fetching the entire dataset, the backend uses `.limit()` and `.skip()` at the database level. This prevents memory overflow and ensures the application remains responsive even if a user has thousands of entries.\n    \n\n### Success Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"count\": 3,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"data\": [\n        {\n            \"_id\": \"69cf936daebbdfef86fb78ab\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"TCS Dividend\",\n            \"amount\": 15000,\n            \"type\": \"income\",\n            \"category\": \"investment\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:16:13.546Z\",\n            \"notes\": \"Quarterly dividend income(sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:16:13.547Z\",\n            \"updatedAt\": \"2026-04-03T10:16:13.547Z\",\n            \"__v\": 0,\n            \"id\": \"69cf936daebbdfef86fb78ab\"\n        },\n        {\n            \"_id\": \"69cf92f7aebbdfef86fb78a4\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Big Bazaar Grocery\",\n            \"amount\": 420,\n            \"type\": \"expense\",\n            \"category\": \"shopping\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:14:15.510Z\",\n            \"notes\": \"Monthly ration and snacks (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:14:15.511Z\",\n            \"updatedAt\": \"2026-04-03T10:14:15.511Z\",\n            \"__v\": 0,\n            \"id\": \"69cf92f7aebbdfef86fb78a4\"\n        },\n        {\n            \"_id\": \"69cf9239aebbdfef86fb78a1\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Monthly Salary\",\n            \"amount\": 75000,\n            \"type\": \"income\",\n            \"category\": \"salary\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:11:05.050Z\",\n            \"notes\": \"March month salary credited (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:11:05.054Z\",\n            \"updatedAt\": \"2026-04-03T10:11:05.054Z\",\n            \"__v\": 0,\n            \"id\": \"69cf9239aebbdfef86fb78a1\"\n        }\n    ]\n}\n\n ```\n\nEndFragment"
-              },
-              "response": []
-            },
-            {
-              "name": "Export-Personal-Transaction",
-              "request": {
-                "method": "GET",
-                "header": [],
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/export",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "export"
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[GET\\] /api/transactions/export**\n\n- **Description:** Downloads personal transaction data in CSV format.\n    \n- **Technical Implementation:** Uses **Stream-based Data Transformation**. The backend streams records from MongoDB and converts them to CSV format on-the-fly. This \"Buffer-free\" approach is a professional design choice to handle large exports without crashing the server's RAM.\n    \n\nEndFragment"
-              },
-              "response": []
-            },
-            {
-              "name": "Get-Personal-Transaction-Stats",
-              "protocolProfileBehavior": {
-                "disableBodyPruning": true
-              },
-              "request": {
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
-                "url": {
-                  "raw": "http://localhost:3000/api/transactions/stats",
-                  "protocol": "http",
-                  "host": [
-                    "localhost"
-                  ],
-                  "port": "3000",
-                  "path": [
-                    "api",
-                    "transactions",
-                    "stats"
-                  ]
-                },
-                "description": "StartFragment\n\n#### **\\[GET\\] /api/transactions/stats**\n\n- **Description:** Generates personal financial insights (Income, Expense, Balance).\n    \n- **Technical Implementation:** Leverages **Database-Level Aggregation**. It uses the `$match` and `$group` stages to perform heavy mathematical calculations directly on the MongoDB engine, ensuring **zero-memory overhead** on the Node.js process.\n    \n\nSuccess Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"message\": \"Detailed Personal Stats\",\n    \"data\": {\n        \"summary\": {\n            \"totalIncome\": 90000,\n            \"totalExpense\": 420,\n            \"netBalance\": 89580,\n            \"totalTransactions\": 3\n        },\n        \"averages\": {\n            \"avgIncome\": 45000,\n            \"avgExpense\": 420\n        },\n        \"counts\": {\n            \"incomeCount\": 2,\n            \"expenseCount\": 1\n        },\n        \"categoryBreakdown\": [\n            {\n                \"_id\": \"shopping\",\n                \"totalSpent\": 420,\n                \"transactionCount\": 1\n            }\n        ]\n    }\n}\n\n ```\n\nEndFragment"
-              },
-              "response": []
-            }
-          ],
-          "description": "StartFragment\n\nOptimized for personal finance monitoring. This folder showcases the system's ability to enforce **Strict Data Privacy** at the API level.\n\n**Technical Implementation:** This is a **Multi-tenant Privacy Model**. Every request in this folder is automatically filtered by the `userId` extracted from the JWT. Even for summary statistics, the backend executes **Database-Level Aggregation** that is strictly scoped to the logged-in user. This design prevents **IDOR (Insecure Direct Object Reference)** vulnerabilities, ensuring a user can never access or calculate peer data.\n\nEndFragment"
-        }
-      ],
-      "description": "StartFragment\n\nThe **Viewer Tier** is the most restricted user level. It enforces **Data Isolation** by allowing users to view only their own transactions. With the `read:record` permission, the backend automatically filters all queries using the `userId` from the JWT. This ensures privacy and prevents unauthorized access to organizational or peer data.\n\n**Technical Implementation:** Enforces **Data Isolation** by automatically injecting `userId` filters into every query. Even the summary stats for Viewers are calculated at the **Database Level**, but strictly scoped to the logged-in user to prevent **IDOR (Insecure Direct Object Reference)** vulnerabilities.\n\nEndFragment"
-    },
-    {
-      "name": "Authentication",
-      "item": [
-        {
-          "name": "Logout",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "url": {
-              "raw": "{{base_url}}/api/auth/logout",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "logout"
-              ]
-            },
-            "description": "StartFragment\n\n### **\\[POST\\] User Logout**\n\n**Endpoint:** `{{base_url}}/api/auth/logout`\n\n#### **Description**\n\nThis endpoint is responsible for gracefully terminating the user's active session. It ensures that the authentication token is invalidated on the client side, preventing unauthorized reuse of the session.\n\n#### **Features**\n\n- **Stateless Invalidation:** Since the system uses JWTs, the server \"logs out\" the user by instructing the browser to clear the **HTTP-only Cookie**.\n    \n- **Instant Expiry:** The backend sends a response that sets the cookie's expiration date to a past value (e.g., `Date.now()`), effectively deleting it from the user's browser.\n    \n- **Security Guard:** This prevents \"Session Hijacking\" after a user leaves a public computer or shared device.\n    \n- **No Request Body Required:** Since the identity is pulled from the cookie itself, the user doesn't need to send any data to log out.\n    \n\n---\n\n#### **Request Body (JSON)**\n\n- **None.** (The server identifies the session via the attached cookie).\n    \n\n---\n\n#### **Success Response (200 OK)**\n\nJSON\n\n```\n{\n    \"success\": true,\n    \"message\": \"Logged out successfully\"\n}\n\n ```\n\n---\n\n#### **Error Responses**\n\n| **Status Code** | **Reason** | **Example Message** |  \n| **500 Internal Error** | Server Issue | \"An unexpected error occurred while processing your logout.\" |\n\nEndFragment"
-          },
-          "response": []
-        },
-        {
-          "name": "Login",
-          "request": {
-            "auth": {
-              "type": "noauth"
-            },
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"email\":\"sagar@example.com\",\r\n    \"password\": \"sagar123\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
                 }
-              }
+              },
+              "url": {
+                "raw": "{{base_url}}/api/transactions/add",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "add"
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[POST\\] Add-Transaction**\n\n- **Method:** `POST`\n    \n- **Endpoint:** `/api/transactions/add`\n    \n- **Description:** Creates a new financial record. Admins can create transactions for themselves or on behalf of other users using the `targetUserId`.\n    \n- **Technical Implementation:** Implements **Administrative Proxy Logic**. The backend checks if a `targetUserId` is provided; if yes, it attributes the record to that specific user ID. It uses **Joi Schema Validation** to ensure data types (Number, Date, String) are strictly followed before hitting MongoDB.\n    \n\n#### **Request Body (JSON Example):**\n\nJSON\n\n```\n{\n  \"title\": \"Monthly Salary\",\n  \"amount\": 75000,\n  \"type\": \"income\",\n  \"category\": \"salary\",\n  \"paymentMethod\": \"online\",\n  \"notes\": \"March month salary credited (sagar's Id)\",\n  \"targetUserId\": \"69cf8b35aebbdfef86fb788f\"\n}\n\n ```\n\n#### **Success Response (201 Created):**\n\n```\n{\n    \"success\": true,\n    \"message\": \"Transaction assigned to user!\",\n    \"data\": {\n        \"userId\": \"69cf8b35aebbdfef86fb788f\",\n        \"title\": \"Monthly Salary\",\n        \"amount\": 75000,\n        \"type\": \"income\",\n        \"category\": \"salary\",\n        \"paymentMethod\": \"online\",\n        \"date\": \"2026-04-03T10:11:05.050Z\",\n        \"notes\": \"March month salary credited (sagar's Id)\",\n        \"_id\": \"69cf9239aebbdfef86fb78a1\",\n        \"createdAt\": \"2026-04-03T10:11:05.054Z\",\n        \"updatedAt\": \"2026-04-03T10:11:05.054Z\",\n        \"__v\": 0,\n        \"id\": \"69cf9239aebbdfef86fb78a1\"\n    }\n}\n\n ```\n\nEndFragment"
             },
-            "url": {
-              "raw": "{{base_url}}/api/auth/login",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "login"
-              ]
-            },
-            "description": "StartFragment\n\nSagar, here is the professional English documentation for the **User Login** endpoint. This is the \"Unified Gateway\" of your app, where the **JWT + Cookie** magic happens.\n\n---\n\n### **\\[POST\\] User Login**\n\n**Endpoint:** `{{base_url}}/api/auth/login`\n\n#### **Description**\n\nThis is the central authentication gateway for all user tiers (**Admin, Analyst, and Viewer**). It verifies user identity and establishes a secure, stateless session using **JSON Web Tokens (JWT)**.\n\n#### **Features**\n\n- **Bcrypt Verification:** Validates the provided plain-text password against the one-way hashed string stored in the database.\n    \n- **Stateless JWT Issuance:** On successful authentication, the server generates a signed JWT containing the user’s unique ID and their authorized **Role**.\n    \n- **HTTP-Only Cookie (XSS Protection):** The JWT is not returned in the JSON body. Instead, it is injected into a **Secure, HTTP-Only Cookie**. This prevents malicious scripts from stealing the session token.\n    \n- **Role-Based Payload:** The JSON response includes the user’s name and role, allowing the frontend to instantly customize the UI (e.g., hiding the Admin Dashboard from a Viewer).\n    \n\n---\n\n#### **Request Body (JSON)**\n\nJSON\n\n```\n{\n    \"email\":\"sagar@example.com\",\n    \"password\": \"sagar123\"\n}\n\n ```\n\n---\n\n#### **Success Response (200 OK)**\n\n**Note:** The `Set-Cookie` header will be present in the response, containing the JWT.\n\nJSON\n\n```\n{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5Y2Y4YjM1YWViYmRmZWY4NmZiNzg4ZiIsInJvbGUiOiJ2aWV3ZXIiLCJ1c2VybmFtZSI6IlNhZ2FyIEt1bWFyIiwiaWF0IjoxNzc1MjA5ODQ1LCJleHAiOjE3NzUyOTYyNDV9.DZlxigg292rq-Hu8kPLJ8-N1RF_Z7coQWdf2Q6cq-uc\",\n    \"message\": \"Logged in successfully\",\n    \"user\": {\n        \"id\": \"69cf8b35aebbdfef86fb788f\",\n        \"username\": \"Sagar Kumar\",\n        \"role\": \"viewer\"\n    }\n}\n\n ```\n\n---\n\nStartFragment\n\n#### **Error Responses**\n\n| **Status Code** | **Reason** | **Example Message** |  \n| **401 Unauthorized** | Invalid Credentials | \"Invalid email or password. Please try again.\" |  \n| **400 Bad Request** | Missing Fields | \"Please provide both email and password.\" |  \n| **404 Not Found** | User Deleted | \"Account not found or has been deactivated.\" |\n\nEndFragment\n\nEndFragment"
+            "response": []
           },
-          "response": []
-        },
-        {
-          "name": "Register",
-          "request": {
-            "auth": {
-              "type": "noauth"
-            },
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"username\": \"Sagar Kumar\",\r\n  \"email\": \"sagar@example.com\",\r\n  \"password\": \"sagar123\"\r\n}\r\n",
-              "options": {
-                "raw": {
-                  "language": "json"
+          {
+            "name": "Update-Transaction",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "PUT",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n\r\n  \"amount\": 120\r\n\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
                 }
-              }
+              },
+              "url": {
+                "raw": "{{base_url}}/api/transactions/update/:id",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "update",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "69cf93fcaebbdfef86fb78b5"
+                  }
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[PUT\\] Update-Transaction**\n\n- **Method:** `PUT`\n    \n- **Endpoint:** `/api/transactions/update/:id`\n    \n- **Parameters:** `id` (Path Variable - The Transaction ID)\n    \n- **Description:** Updates an existing transaction. Admins have \"Overriding Authority\" to modify any record in the system.\n    \n- **Parameters:** `id` (Path Variable - The Transaction ID)\n    \n- **Technical Implementation:** Uses the **Atomic Update Pattern** via `findByIdAndUpdate`. It ensures **Data Integrity** by validating that the `amount` remains a positive number and the `type` stays within the 'income' or 'expense' enum.\n    \n- **Request Body (JSON Example):**\n    \n\nJSON\n\n``` bash\n{\n  \"amount\": 120\n}\n\n ```\n\n### Success Response( 200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"message\": \"Transaction updated successfully!\",\n    \"data\": {\n        \"_id\": \"69cf93fcaebbdfef86fb78b5\",\n        \"userId\": \"69cf8e9aaebbdfef86fb7896\",\n        \"title\": \"Dinner Order\",\n        \"amount\": 120,\n        \"type\": \"expense\",\n        \"category\": \"food\",\n        \"paymentMethod\": \"card\",\n        \"date\": \"2026-04-03T10:18:36.685Z\",\n        \"notes\": \"Late night pizza party (bittu's Id)\",\n        \"createdAt\": \"2026-04-03T10:18:36.686Z\",\n        \"updatedAt\": \"2026-04-03T10:19:59.522Z\",\n        \"__v\": 0,\n        \"id\": \"69cf93fcaebbdfef86fb78b5\"\n    }\n}\n\n ```\n\nEndFragment"
             },
-            "url": {
-              "raw": "{{base_url}}/api/auth/register",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "api",
-                "auth",
-                "register"
-              ]
-            },
-            "description": "StartFragment\n\n### **\\[POST\\] User Registration**\n\n**Endpoint:** `{{base_url}}/api/auth/register`\n\n#### **Description**\n\nThis endpoint serves as the public onboarding gateway for all new users. To maintain a high-security posture and prevent unauthorized access to sensitive administrative functions, the system implements a **Strict Role-Locking Policy**.\n\n#### **Features**\n\n- **Role Overriding (Anti-Privilege Escalation):** The backend is architected to explicitly ignore the `role` field in the request payload. This ensures that a malicious actor cannot grant themselves `admin` or `analyst` status during signup.\n    \n- **Default Authorization:** Every successful registration is hardcoded to the **'viewer'** role.\n    \n- **Data Sanitization:** The response object is sanitized using Mongoose `.toObject()` or `.select('-password')` to ensure the hashed password is never exposed in the API response.\n    \n- **Bcrypt Hashing:** Passwords undergo a one-way salt-and-hash process before being persisted to the database.\n    \n\n---\n\n#### **Request Body (JSON)**\n\nJSON\n\n``` bash\n{\n  \"username\": \"Sagar Kumar\",\n  \"email\": \"sagar@example.com\",\n  \"password\": \"sagar123\"\n}\n\n ```\n\n**Note:** Even if you include `\"role\": \"admin\"` in the JSON above, the system will override it to `\"viewer\"`.\n\n#### Success Response (201 Created)\n\nJSON\n\n``` bash\n{\n    \"success\": true,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"id\": \"69cf8b35aebbdfef86fb788f\",\n        \"username\": \"Sagar Kumar\",\n        \"role\": \"viewer\"\n    }\n}\n\n ```\n\nStartFragment\n\n#### **Error Responses**\n\n| **Status Code** | **Reason** | **Example Message** |  \n| **400 Bad Request** | Duplicate Email | \"Email already exists. Please use a different email.\" |  \n| **400 Bad Request** | Validation Fail | \"Password must be at least 8 characters long.\" |  \n| **500 Internal Error** | Server/DB Issue | \"An unexpected error occurred on the server.\" |\n\nEndFragment\n\nEndFragment"
+            "response": []
           },
-          "response": []
-        }
-      ],
-      "description": "StartFragment\n\nThis module manages the complete user lifecycle, from secure onboarding to session termination. The architecture follows a **\"Secure-by-Default\"** philosophy to mitigate common vulnerabilities like Privilege Escalation and Session Hijacking.\n\n---\n\n### 1\\. Identity Bootstrapping (The \"First Admin\" Logic)\n\nIn a production environment, manual database manipulation is a security risk. Our system uses an automated **Data Seeding** strategy.\n\n- **Mechanism:** During the `connectDB` lifecycle, a **Seed Script** executes automatically.\n    \n- **Logic:** The system scans the database for an existing user with the `admin` role. If no administrator is found, the backend initializes a **Master Admin** account using credentials defined in the Environment Variables (`.env`).\n    \n- **Production Benefit:** This ensures a \"Self-Healing\" infrastructure where a secure governance account is always available from the first second of deployment without manual intervention.\n    \n\n---\n\n### 2\\. User Registration (Public Onboarding)\n\n- **Endpoint:** `POST /api/auth/register`\n    \n- **Role Overriding (Security Layer):** To prevent **Mass Assignment Vulnerabilities**, the controller is hardcoded to ignore any `role` field sent in the request body.\n    \n- **Default State:** Every new registration is strictly assigned the **'viewer'** role.\n    \n- **Constraint:** There is no public path to register as an Admin or Analyst. This creates a \"Zero-Trust\" entry point.\n    \n\n---\n\n### 3\\. Role Elevation (Promoting a Viewer)\n\nSince public registration is locked to the lowest privilege level, elevating a user requires internal governance:\n\n- **The Flow:** A new user registers as a **Viewer**. An existing **Administrator** then retrieves that User’s ID and performs a promotion.\n    \n- **Governance API:** `PUT /api/admin/user/:id` (Protected by Admin Middleware).\n    \n- **Rationale:** This ensures that elevated privileges (Analyst/Admin) are only granted to trusted individuals through a controlled administrative action.\n    \n\n---\n\n### 4\\. Unified Login & Session Integrity\n\n- **Endpoint:** `POST /api/auth/login`\n    \n- **Verification:** Credentials are cross-referenced against **Bcrypt-hashed** passwords.\n    \n- **Tokenization:** Upon successful authentication, the system issues a **JSON Web Token (JWT)** containing the user's authorized role.\n    \n- **XSS Protection:** The JWT is delivered via an **HTTP-only, Secure Cookie**. This prevents client-side JavaScript from accessing the token, effectively neutralizing Cross-Site Scripting (XSS) threats.\n    \n\n---\n\n### 5\\. Secure Logout\n\n- **Endpoint:** `POST /api/auth/logout`\n    \n- **Logic:** The server explicitly clears and expires the authentication cookie.\n    \n- **Result:** This ensures an immediate and stateless termination of the user session across the client and server.\n    \n\nEndFragment"
-    }
-  ]
+          {
+            "name": "Delete-Transaction",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "DELETE",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n  \"title\": \"Monthly Salary\",\r\n  \"amount\": 55000,\r\n  \"type\": \"income\",\r\n  \"category\": \"salary\",\r\n  \"paymentMethod\": \"online\",\r\n  \"date\": \"2024-05-20\",\r\n  \"notes\": \"HDFC Bank mein salary credit hui thi\"\r\n}"
+              },
+              "url": {
+                "raw": "{{base_url}}/api/transactions/delete/:id",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "delete",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "69cf933faebbdfef86fb78a8"
+                  }
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[DELETE\\] Delete-Transaction**\n\n- **Method:** `DELETE`\n    \n- **Endpoint:** `/api/transactions/delete/:id`\n    \n- **Parameters:** `id` (Path Variable - The Transaction ID)\n    \n- **Description:** Permanently removes a specific transaction from the database.\n    \n- **Technical Implementation:** Protected by the `delete:record` permission. It executes a **Hard Delete** to keep the database clean after administrative review, ensuring the ledger remains accurate.\n    \n\n### Success Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"message\": \"Transaction deleted by Admin successfully\"\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          },
+          {
+            "name": "Get-All-User",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/admin/all-users",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "admin",
+                  "all-users"
+                ]
+              },
+              "description": "StartFragment\n\n### **\\[GET\\] Get-All-User**\n\n- **Method:** `GET`\n    \n- **Endpoint:** `/api/admin/all-users`\n    \n- **Description:** Retrieves a comprehensive, paginated list of all registered users in the system for administrative auditing and governance.\n    \n- **Technical Implementation:**\n    \n    - **Administrative Oversight:** Provides a \"Global Identity View\" that includes active, inactive, and soft-deleted accounts.\n        \n    - **Database Pagination:** Implements `.limit()` and `.skip()` at the MongoDB level. This is a **Performance Best Practice** to handle large user bases efficiently, preventing memory spikes in the Node.js environment.\n        \n    - **Permission Gate:** Strictly protected by the `manage:users` permission. The middleware ensures that only a high-level Administrator can access this sensitive directory of user data.\n        \n\n**Query Parameters (Optional):**\n\n- `page`: (Number) e.g., `1, default=1`\n    \n- `limit`: (Number) e.g., `10, default=10`\n    \n\n### Success Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"count\": 4,\n    \"totalUsers\": 4,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"users\": [\n        {\n            \"_id\": \"69cf8eb0aebbdfef86fb7899\",\n            \"username\": \"niraj\",\n            \"email\": \"niraj@gmail.com\",\n            \"role\": \"viewer\",\n            \"status\": \"active\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2026-04-03T09:56:00.867Z\",\n            \"updatedAt\": \"2026-04-03T09:56:00.867Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69cf8e9aaebbdfef86fb7896\",\n            \"username\": \"bittu\",\n            \"email\": \"bittu@gmail.com\",\n            \"role\": \"viewer\",\n            \"status\": \"active\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2026-04-03T09:55:38.967Z\",\n            \"updatedAt\": \"2026-04-03T09:55:38.967Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69cf8b35aebbdfef86fb788f\",\n            \"username\": \"Sagar Kumar\",\n            \"email\": \"sagar@example.com\",\n            \"role\": \"viewer\",\n            \"status\": \"active\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2026-04-03T09:41:09.284Z\",\n            \"updatedAt\": \"2026-04-03T09:41:09.284Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69cf867d6cb53b56870e65a0\",\n            \"username\": \"Admin\",\n            \"email\": \"admin@gmail.com\",\n            \"role\": \"admin\",\n            \"status\": \"active\",\n            \"isDeleted\": false,\n            \"createdAt\": \"2026-04-03T09:21:01.465Z\",\n            \"updatedAt\": \"2026-04-03T09:21:01.465Z\",\n            \"__v\": 0\n        }\n    ]\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          },
+          {
+            "name": "Get-Transaction-Stats",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/transactions/stats",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "stats"
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[GET\\] Get-Transaction-Stats (Global Analytics)**\n\n- **Method:** `GET`\n    \n- **Endpoint:** `/api/transactions/stats`\n    \n- **Description:** Generates a platform-wide financial summary, including total organizational balance, income vs. expense ratios, and category-wise spending.\n    \n- **Technical Implementation:** Powered by a **Multi-Stage MongoDB Aggregation Pipeline**. It performs `$match`, `$group`, and `$sort` at the **Database Level**. This offloads all heavy mathematical calculations to the database engine, keeping the Node.js server **Stateless and Scalable**.\n    \n\n### Success Response (200 OK):\n\n```\n{\n    \"success\": true,\n    \"message\": \"Detailed Global Stats\",\n    \"data\": {\n        \"summary\": {\n            \"totalIncome\": 108000,\n            \"totalExpense\": 1390,\n            \"netBalance\": 106610,\n            \"totalTransactions\": 6\n        },\n        \"averages\": {\n            \"avgIncome\": 36000,\n            \"avgExpense\": 463\n        },\n        \"counts\": {\n            \"incomeCount\": 3,\n            \"expenseCount\": 3\n        },\n        \"categoryBreakdown\": [\n            {\n                \"_id\": \"others\",\n                \"totalSpent\": 850,\n                \"transactionCount\": 1\n            },\n            {\n                \"_id\": \"shopping\",\n                \"totalSpent\": 420,\n                \"transactionCount\": 1\n            },\n            {\n                \"_id\": \"food\",\n                \"totalSpent\": 120,\n                \"transactionCount\": 1\n            }\n        ]\n    }\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          },
+          {
+            "name": "Export-Transaction",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/transactions/export",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "export"
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[GET\\] Export-Transaction (Global Data Dump)**\n\n- **Method:** `GET`\n    \n- **Endpoint:** `/api/transactions/export`\n    \n- **Description:** Generates and downloads a complete CSV report of all transactions for administrative auditing.\n    \n- **Technical Implementation:** Implements **Node.js Streams** (Readable Stream from MongoDB ➔ CSV Transform ➔ Writable Stream to HTTP Response). This \"Buffer-free\" approach ensures that the server can export GBs of data without crashing its RAM, providing **Enterprise-Grade Reliability**.\n    \n\nEndFragment"
+            },
+            "response": []
+          },
+          {
+            "name": "Get-All-Transaction",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/transactions/all",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "all"
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[GET\\] Get-All-Transaction (Global Ledger)**\n\n- **Method:** `GET`\n    \n- **Endpoint:** `/api/transactions/all`\n    \n- **Query Parameters:** `page=1`, `limit=10`\n    \n- **Description:** Retrieves a master list of every financial record across all users in the system.\n    \n- **Technical Implementation:** Unlike the Viewer role, this endpoint removes the `userId` restriction. It uses **Server-Side Pagination** (`.limit()` and `.skip()`) to ensure that fetching millions of records doesn't cause a \"Heap Out of Memory\" error in Node.js.\n    \n- **Security:** Only accessible via a JWT with `role: \"admin\"`.\n    \n\n### Success Response (200 OK):\n\n```\n{\n    \"success\": true,\n    \"count\": 6,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"data\": [\n        {\n            \"_id\": \"69cf93fcaebbdfef86fb78b5\",\n            \"userId\": {\n                \"_id\": \"69cf8e9aaebbdfef86fb7896\",\n                \"username\": \"bittu\",\n                \"email\": \"bittu@gmail.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Dinner Order\",\n            \"amount\": 120,\n            \"type\": \"expense\",\n            \"category\": \"food\",\n            \"paymentMethod\": \"card\",\n            \"date\": \"2026-04-03T10:18:36.685Z\",\n            \"notes\": \"Late night pizza party (bittu's Id)\",\n            \"createdAt\": \"2026-04-03T10:18:36.686Z\",\n            \"updatedAt\": \"2026-04-03T10:19:59.522Z\",\n            \"__v\": 0,\n            \"id\": \"69cf93fcaebbdfef86fb78b5\"\n        },\n        {\n            \"_id\": \"69cf93e5aebbdfef86fb78b2\",\n            \"userId\": {\n                \"_id\": \"69cf8e9aaebbdfef86fb7896\",\n                \"username\": \"bittu\",\n                \"email\": \"bittu@gmail.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Apollo Pharmacy\",\n            \"amount\": 850,\n            \"type\": \"expense\",\n            \"category\": \"others\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:18:13.422Z\",\n            \"notes\": \"Regular vitamins and medicines (bittu's Id)\",\n            \"createdAt\": \"2026-04-03T10:18:13.422Z\",\n            \"updatedAt\": \"2026-04-03T10:18:13.422Z\",\n            \"__v\": 0,\n            \"id\": \"69cf93e5aebbdfef86fb78b2\"\n        },\n        {\n            \"_id\": \"69cf93beaebbdfef86fb78ae\",\n            \"userId\": {\n                \"_id\": \"69cf8e9aaebbdfef86fb7896\",\n                \"username\": \"bittu\",\n                \"email\": \"bittu@gmail.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Sold iPhone 11\",\n            \"amount\": 18000,\n            \"type\": \"income\",\n            \"category\": \"salary\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:17:34.783Z\",\n            \"notes\": \"Sold to a local buyer (bittu's Id)\",\n            \"createdAt\": \"2026-04-03T10:17:34.784Z\",\n            \"updatedAt\": \"2026-04-03T10:17:34.784Z\",\n            \"__v\": 0,\n            \"id\": \"69cf93beaebbdfef86fb78ae\"\n        },\n        {\n            \"_id\": \"69cf936daebbdfef86fb78ab\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"TCS Dividend\",\n            \"amount\": 15000,\n            \"type\": \"income\",\n            \"category\": \"investment\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:16:13.546Z\",\n            \"notes\": \"Quarterly dividend income(sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:16:13.547Z\",\n            \"updatedAt\": \"2026-04-03T10:16:13.547Z\",\n            \"__v\": 0,\n            \"id\": \"69cf936daebbdfef86fb78ab\"\n        },\n        {\n            \"_id\": \"69cf92f7aebbdfef86fb78a4\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Big Bazaar Grocery\",\n            \"amount\": 420,\n            \"type\": \"expense\",\n            \"category\": \"shopping\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:14:15.510Z\",\n            \"notes\": \"Monthly ration and snacks (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:14:15.511Z\",\n            \"updatedAt\": \"2026-04-03T10:14:15.511Z\",\n            \"__v\": 0,\n            \"id\": \"69cf92f7aebbdfef86fb78a4\"\n        },\n        {\n            \"_id\": \"69cf9239aebbdfef86fb78a1\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Monthly Salary\",\n            \"amount\": 75000,\n            \"type\": \"income\",\n            \"category\": \"salary\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:11:05.050Z\",\n            \"notes\": \"March month salary credited (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:11:05.054Z\",\n            \"updatedAt\": \"2026-04-03T10:11:05.054Z\",\n            \"__v\": 0,\n            \"id\": \"69cf9239aebbdfef86fb78a1\"\n        }\n    ]\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          },
+          {
+            "name": "Delete-User",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/admin/user/:id",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "admin",
+                  "user",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "69cf8eb0aebbdfef86fb7899"
+                  }
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[DELETE\\] Delete-User (Soft Delete)**\n\n- **Method:** `DELETE`\n    \n- **Endpoint:** `/api/admin/user/:id`\n    \n- **Parameters:** `id` (Path Variable - The User ID)\n    \n- **Description:** Deactivates and archives a user account from the system.\n    \n- **Technical Implementation:** Uses the **Soft-Delete Design Pattern**. Instead of a destructive `remove()`, the backend updates the user's `isDeleted` flag to `true`. This is a **Critical FinTech Requirement** to maintain historical data for **Regulatory Audits** while revoking user access.\n    \n\n### Success Response (200 OK):\n\n```\n{\n    \"success\": true,\n    \"message\": \"User has been deactivated/deleted by Admin\"\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          },
+          {
+            "name": "Change-Priviliges",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "PUT",
+              "header": [],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n \"role\":\"analyst\",\r\n \"status\":\"active\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{base_url}}/api/admin/user/:id",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "admin",
+                  "user",
+                  ":id"
+                ],
+                "variable": [
+                  {
+                    "key": "id",
+                    "value": "69cf8eb0aebbdfef86fb7899"
+                  }
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[PUT\\] Change-Privileges**\n\n- **Method:** `PUT`\n    \n- **Endpoint:** `/api/admin/user/:id`\n    \n- **Parameters:** `id` (Path Variable - The User ID)\n    \n- **Description:** Updates a user's system role or account status (Active/Inactive).\n    \n- **Technical Implementation:** Core **Identity Governance** logic. It allows Admins to manage the RBAC (Role-Based Access Control) hierarchy.\n    \n- **Request Body (JSON Example):**\n    \n\nJSON\n\n```\n{\n \"role\":\"analyst\",\n \"status\":\"active\"\n}\n\n ```\n\n### Success Resposne(200 OK):\n\n```\n{\n    \"success\": true,\n    \"message\": \"User niraj is now analyst and active\",\n    \"user\": {\n        \"_id\": \"69cf8eb0aebbdfef86fb7899\",\n        \"username\": \"niraj\",\n        \"email\": \"niraj@gmail.com\",\n        \"role\": \"analyst\",\n        \"status\": \"active\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-04-03T09:56:00.867Z\",\n        \"updatedAt\": \"2026-04-03T10:39:27.270Z\",\n        \"__v\": 0\n    }\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          }
+        ],
+        "description": "StartFragment\n\nProvides the highest level of authorization, allowing for complete **User Lifecycle Management** and unrestricted record manipulation. This folder is the core of the platform's security and regulatory compliance.\n\n#### **Features:**\n\n- **Identity Bootstrapping (Auto-Seeding):**\n    \n    - To maintain a \"Secure-by-Default\" environment, the **Master Admin** is never created through a public registration form.\n        \n    - The system implements an automated **Data Seeding** script that triggers during the initial database connection. If no administrator is detected, the backend instantly initializes a Root Admin account using protected Environment Variables.\n        \n    - This ensures the system is **Self-Healing** and maintains a clear chain of command from the very first second of deployment.\n        \n- **RBAC Strategy Pattern:**\n    \n    - This folder demonstrates **Command-and-Control** backend logic. It implements the **Strategy Pattern for Role-Based Access Control (RBAC)**, allowing Admins to perform high-stakes operations like promoting Viewers to Analysts or managing User Governance (activating/deactivating accounts).\n        \n- **Soft-Delete Mechanism (Regulatory Compliance):**\n    \n    - For financial records and user accounts, the system avoids permanent data destruction. Instead, it utilizes a **Soft Delete** mechanism (`isDeleted: true`).\n        \n    - **The Logic:** This ensures that sensitive financial data remains available for **Regulatory Audits** and forensic accounting while being effectively hidden from active business views and the frontend dashboard.\n        \n\nEndFragment"
+      }
+    ],
+    "description": "StartFragment\n\nThe **Admin Tier** represents the highest level of authorization in the system. The Admin role is granted the `manage:users` and `full:access` permissions. This allows for governance over the user base (activating/deactivating accounts) and full lifecycle management (CRUD) of financial records. This folder demonstrates the **Command-and-Control** capabilities of the backend.\n\n**Technical Implementation:** This folder showcases **Database-Level Processing**. All summary statistics and trends are calculated using **MongoDB Aggregation Pipelines** (`$match`, `$group`, `$sum`). By offloading heavy math to the DB engine, we ensure the Node.js server maintains a **zero-memory footprint** during large-scale data analysis.  \n  \n\nEndFragment"
+  },
+  {
+    "name": "Viewer-Role",
+    "item": [
+      {
+        "name": "Filter-Transaction",
+        "item": [
+          {
+            "name": "Filter-Expense",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/transactions/filter?type=expense",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "filter"
+                ],
+                "query": [
+                  {
+                    "key": "type",
+                    "value": "expense"
+                  }
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[GET\\] Filter-Expense**\n\n- **Endpoint:** `/api/transactions/filter`\n    \n- **Query Parameters:** `type=expense` (or `type=income`)\n    \n- **Description:** Filters the user's personal records specifically by the transaction type.\n    \n- **Technical Implementation:** Utilizes **Dynamic Query Building**. It combines the authenticated `userId` with the `type` parameter. The backend is optimized with a **Compound Index** on `[userId + type]`, ensuring that the search complexity remains **O(log N)**, providing sub-millisecond response times.\n    \n\n### Success Response (200 OK):\n\n```\n{\n    \"success\": true,\n    \"count\": 1,\n    \"data\": [\n        {\n            \"_id\": \"69cf92f7aebbdfef86fb78a4\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\"\n            },\n            \"title\": \"Big Bazaar Grocery\",\n            \"amount\": 420,\n            \"type\": \"expense\",\n            \"category\": \"shopping\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:14:15.510Z\",\n            \"notes\": \"Monthly ration and snacks (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:14:15.511Z\",\n            \"updatedAt\": \"2026-04-03T10:14:15.511Z\",\n            \"__v\": 0,\n            \"id\": \"69cf92f7aebbdfef86fb78a4\"\n        }\n    ]\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          },
+          {
+            "name": "Filter-Category",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/transactions/filter?category=food",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "filter"
+                ],
+                "query": [
+                  {
+                    "key": "category",
+                    "value": "food",
+                    "type": "text"
+                  }
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[GET\\] Filter-Category**\n\n- **Endpoint:** `/api/transactions/filter`\n    \n- **Query Parameters:** `category=Food`\n    \n- **Description:** Filters the user's personal ledger based on specific financial categories.\n    \n- **Technical Implementation:** Implements **Categorical Indexing**. The controller sanitizes the input and executes a scoped search within the user's document collection. This allows for quick insights into spending habits without the overhead of fetching unrelated data.\n    \n\n## Success Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"message\": \"No transactions found for these filters\",\n    \"data\": []\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          },
+          {
+            "name": "Filter-ByDate",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/transactions/filter?startDate=2026-03-20&endDate=2026-05-30",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "filter"
+                ],
+                "query": [
+                  {
+                    "key": "startDate",
+                    "value": "2026-03-20",
+                    "type": "text"
+                  },
+                  {
+                    "key": "endDate",
+                    "value": "2026-05-30",
+                    "type": "text"
+                  }
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[GET\\] Filter-Category**\n\n- **Endpoint:** `/api/transactions/filter`\n    \n- **Query Parameters:** `category=Food`\n    \n- **Description:** Filters the user's personal ledger based on specific financial categories.\n    \n- **Technical Implementation:** Implements **Categorical Indexing**. The controller sanitizes the input and executes a scoped search within the user's document collection. This allows for quick insights into spending habits without the overhead of fetching unrelated data.\n    \n\n### Success Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"count\": 3,\n    \"data\": [\n        {\n            \"_id\": \"69cf936daebbdfef86fb78ab\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\"\n            },\n            \"title\": \"TCS Dividend\",\n            \"amount\": 15000,\n            \"type\": \"income\",\n            \"category\": \"investment\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:16:13.546Z\",\n            \"notes\": \"Quarterly dividend income(sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:16:13.547Z\",\n            \"updatedAt\": \"2026-04-03T10:16:13.547Z\",\n            \"__v\": 0,\n            \"id\": \"69cf936daebbdfef86fb78ab\"\n        },\n        {\n            \"_id\": \"69cf92f7aebbdfef86fb78a4\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\"\n            },\n            \"title\": \"Big Bazaar Grocery\",\n            \"amount\": 420,\n            \"type\": \"expense\",\n            \"category\": \"shopping\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:14:15.510Z\",\n            \"notes\": \"Monthly ration and snacks (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:14:15.511Z\",\n            \"updatedAt\": \"2026-04-03T10:14:15.511Z\",\n            \"__v\": 0,\n            \"id\": \"69cf92f7aebbdfef86fb78a4\"\n        },\n        {\n            \"_id\": \"69cf9239aebbdfef86fb78a1\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\"\n            },\n            \"title\": \"Monthly Salary\",\n            \"amount\": 75000,\n            \"type\": \"income\",\n            \"category\": \"salary\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:11:05.050Z\",\n            \"notes\": \"March month salary credited (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:11:05.054Z\",\n            \"updatedAt\": \"2026-04-03T10:11:05.054Z\",\n            \"__v\": 0,\n            \"id\": \"69cf9239aebbdfef86fb78a1\"\n        }\n    ]\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          }
+        ],
+        "description": "StartFragment\n\nEnables users to manage and search through their personal transaction history using high-performance filters.\n\n**Technical Implementation:** Uses **Dynamic Query Building** in Mongoose. All filters (Category, Date Range) are combined with a mandatory `{ userId: req.user.id }` clause. These queries hit **Compound Indexes** in MongoDB, providing **O(log N) lookup performance**. This ensures that even as a user's personal history grows to thousands of records, the dashboard remains lag-free.\n\nEndFragment"
+      },
+      {
+        "name": "Viewer-Access",
+        "item": [
+          {
+            "name": "Get-All-Personal-Transaction",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/transactions/all",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "all"
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[GET\\] /api/transactions/all**\n\n- **Description:** Retrieves a paginated list of all financial records belonging specifically to the authenticated user.\n    \n- **Query Parameters:** `page=1&limit=10.`\n    \n- **Technical Implementation:** Implements **Server-Side Pagination**. Instead of fetching the entire dataset, the backend uses `.limit()` and `.skip()` at the database level. This prevents memory overflow and ensures the application remains responsive even if a user has thousands of entries.\n    \n\n### Success Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"count\": 3,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"data\": [\n        {\n            \"_id\": \"69cf936daebbdfef86fb78ab\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"TCS Dividend\",\n            \"amount\": 15000,\n            \"type\": \"income\",\n            \"category\": \"investment\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:16:13.546Z\",\n            \"notes\": \"Quarterly dividend income(sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:16:13.547Z\",\n            \"updatedAt\": \"2026-04-03T10:16:13.547Z\",\n            \"__v\": 0,\n            \"id\": \"69cf936daebbdfef86fb78ab\"\n        },\n        {\n            \"_id\": \"69cf92f7aebbdfef86fb78a4\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Big Bazaar Grocery\",\n            \"amount\": 420,\n            \"type\": \"expense\",\n            \"category\": \"shopping\",\n            \"paymentMethod\": \"cash\",\n            \"date\": \"2026-04-03T10:14:15.510Z\",\n            \"notes\": \"Monthly ration and snacks (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:14:15.511Z\",\n            \"updatedAt\": \"2026-04-03T10:14:15.511Z\",\n            \"__v\": 0,\n            \"id\": \"69cf92f7aebbdfef86fb78a4\"\n        },\n        {\n            \"_id\": \"69cf9239aebbdfef86fb78a1\",\n            \"userId\": {\n                \"_id\": \"69cf8b35aebbdfef86fb788f\",\n                \"username\": \"Sagar Kumar\",\n                \"email\": \"sagar@example.com\",\n                \"role\": \"viewer\"\n            },\n            \"title\": \"Monthly Salary\",\n            \"amount\": 75000,\n            \"type\": \"income\",\n            \"category\": \"salary\",\n            \"paymentMethod\": \"online\",\n            \"date\": \"2026-04-03T10:11:05.050Z\",\n            \"notes\": \"March month salary credited (sagar's Id)\",\n            \"createdAt\": \"2026-04-03T10:11:05.054Z\",\n            \"updatedAt\": \"2026-04-03T10:11:05.054Z\",\n            \"__v\": 0,\n            \"id\": \"69cf9239aebbdfef86fb78a1\"\n        }\n    ]\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          },
+          {
+            "name": "Export-Personal-Transaction",
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/transactions/export",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "export"
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[GET\\] /api/transactions/export**\n\n- **Description:** Downloads personal transaction data in CSV format.\n    \n- **Technical Implementation:** Uses **Stream-based Data Transformation**. The backend streams records from MongoDB and converts them to CSV format on-the-fly. This \"Buffer-free\" approach is a professional design choice to handle large exports without crashing the server's RAM.\n    \n\nEndFragment"
+            },
+            "response": []
+          },
+          {
+            "name": "Get-Personal-Transaction-Stats",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "auth": {
+                "type": "bearer",
+                "bearer": [
+                  {
+                    "key": "token",
+                    "value": "{{token}}",
+                    "type": "string"
+                  }
+                ]
+              },
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{base_url}}/api/transactions/stats",
+                "protocol": "https",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "port": "443",
+                "path": [
+                  "api",
+                  "transactions",
+                  "stats"
+                ]
+              },
+              "description": "StartFragment\n\n#### **\\[GET\\] /api/transactions/stats**\n\n- **Description:** Generates personal financial insights (Income, Expense, Balance).\n    \n- **Technical Implementation:** Leverages **Database-Level Aggregation**. It uses the `$match` and `$group` stages to perform heavy mathematical calculations directly on the MongoDB engine, ensuring **zero-memory overhead** on the Node.js process.\n    \n\nSuccess Response (200 OK):\n\n``` bash\n{\n    \"success\": true,\n    \"message\": \"Detailed Personal Stats\",\n    \"data\": {\n        \"summary\": {\n            \"totalIncome\": 90000,\n            \"totalExpense\": 420,\n            \"netBalance\": 89580,\n            \"totalTransactions\": 3\n        },\n        \"averages\": {\n            \"avgIncome\": 45000,\n            \"avgExpense\": 420\n        },\n        \"counts\": {\n            \"incomeCount\": 2,\n            \"expenseCount\": 1\n        },\n        \"categoryBreakdown\": [\n            {\n                \"_id\": \"shopping\",\n                \"totalSpent\": 420,\n                \"transactionCount\": 1\n            }\n        ]\n    }\n}\n\n ```\n\nEndFragment"
+            },
+            "response": []
+          }
+        ],
+        "description": "StartFragment\n\nOptimized for personal finance monitoring. This folder showcases the system's ability to enforce **Strict Data Privacy** at the API level.\n\n**Technical Implementation:** This is a **Multi-tenant Privacy Model**. Every request in this folder is automatically filtered by the `userId` extracted from the JWT. Even for summary statistics, the backend executes **Database-Level Aggregation** that is strictly scoped to the logged-in user. This design prevents **IDOR (Insecure Direct Object Reference)** vulnerabilities, ensuring a user can never access or calculate peer data.\n\nEndFragment"
+      }
+    ],
+    "description": "StartFragment\n\nThe **Viewer Tier** is the most restricted user level. It enforces **Data Isolation** by allowing users to view only their own transactions. With the `read:record` permission, the backend automatically filters all queries using the `userId` from the JWT. This ensures privacy and prevents unauthorized access to organizational or peer data.\n\n**Technical Implementation:** Enforces **Data Isolation** by automatically injecting `userId` filters into every query. Even the summary stats for Viewers are calculated at the **Database Level**, but strictly scoped to the logged-in user to prevent **IDOR (Insecure Direct Object Reference)** vulnerabilities.\n\nEndFragment"
+  },
+  {
+    "name": "Authentication",
+    "item": [
+      {
+        "name": "Logout",
+        "request": {
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }
+            ]
+          },
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "{{base_url}}/api/auth/logout",
+            "host": [
+              "{{base_url}}"
+            ],
+            "path": [
+              "api",
+              "auth",
+              "logout"
+            ]
+          },
+          "description": "StartFragment\n\n### **\\[POST\\] User Logout**\n\n**Endpoint:** `{{base_url}}/api/auth/logout`\n\n#### **Description**\n\nThis endpoint is responsible for gracefully terminating the user's active session. It ensures that the authentication token is invalidated on the client side, preventing unauthorized reuse of the session.\n\n#### **Features**\n\n- **Stateless Invalidation:** Since the system uses JWTs, the server \"logs out\" the user by instructing the browser to clear the **HTTP-only Cookie**.\n    \n- **Instant Expiry:** The backend sends a response that sets the cookie's expiration date to a past value (e.g., `Date.now()`), effectively deleting it from the user's browser.\n    \n- **Security Guard:** This prevents \"Session Hijacking\" after a user leaves a public computer or shared device.\n    \n- **No Request Body Required:** Since the identity is pulled from the cookie itself, the user doesn't need to send any data to log out.\n    \n\n---\n\n#### **Request Body (JSON)**\n\n- **None.** (The server identifies the session via the attached cookie).\n    \n\n---\n\n#### **Success Response (200 OK)**\n\nJSON\n\n```\n{\n    \"success\": true,\n    \"message\": \"Logged out successfully\"\n}\n\n ```\n\n---\n\n#### **Error Responses**\n\n| **Status Code** | **Reason** | **Example Message** |  \n| **500 Internal Error** | Server Issue | \"An unexpected error occurred while processing your logout.\" |\n\nEndFragment"
+        },
+        "response": []
+      },
+      {
+        "name": "Login",
+        "request": {
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }
+            ]
+          },
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"email\":\"sagar@example.com\",\r\n    \"password\": \"sagar123\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "{{base_url}}/api/auth/login",
+            "host": [
+              "{{base_url}}"
+            ],
+            "path": [
+              "api",
+              "auth",
+              "login"
+            ]
+          },
+          "description": "StartFragment\n\nSagar, here is the professional English documentation for the **User Login** endpoint. This is the \"Unified Gateway\" of your app, where the **JWT + Cookie** magic happens.\n\n---\n\n### **\\[POST\\] User Login**\n\n**Endpoint:** `{{base_url}}/api/auth/login`\n\n#### **Description**\n\nThis is the central authentication gateway for all user tiers (**Admin, Analyst, and Viewer**). It verifies user identity and establishes a secure, stateless session using **JSON Web Tokens (JWT)**.\n\n#### **Features**\n\n- **Bcrypt Verification:** Validates the provided plain-text password against the one-way hashed string stored in the database.\n    \n- **Stateless JWT Issuance:** On successful authentication, the server generates a signed JWT containing the user’s unique ID and their authorized **Role**.\n    \n- **HTTP-Only Cookie (XSS Protection):** The JWT is not returned in the JSON body. Instead, it is injected into a **Secure, HTTP-Only Cookie**. This prevents malicious scripts from stealing the session token.\n    \n- **Role-Based Payload:** The JSON response includes the user’s name and role, allowing the frontend to instantly customize the UI (e.g., hiding the Admin Dashboard from a Viewer).\n    \n\n---\n\n#### **Request Body (JSON)**\n\nJSON\n\n```\n{\n    \"email\":\"sagar@example.com\",\n    \"password\": \"sagar123\"\n}\n\n ```\n\n---\n\n#### **Success Response (200 OK)**\n\n**Note:** The `Set-Cookie` header will be present in the response, containing the JWT.\n\nJSON\n\n```\n{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5Y2Y4YjM1YWViYmRmZWY4NmZiNzg4ZiIsInJvbGUiOiJ2aWV3ZXIiLCJ1c2VybmFtZSI6IlNhZ2FyIEt1bWFyIiwiaWF0IjoxNzc1MjA5ODQ1LCJleHAiOjE3NzUyOTYyNDV9.DZlxigg292rq-Hu8kPLJ8-N1RF_Z7coQWdf2Q6cq-uc\",\n    \"message\": \"Logged in successfully\",\n    \"user\": {\n        \"id\": \"69cf8b35aebbdfef86fb788f\",\n        \"username\": \"Sagar Kumar\",\n        \"role\": \"viewer\"\n    }\n}\n\n ```\n\n---\n\nStartFragment\n\n#### **Error Responses**\n\n| **Status Code** | **Reason** | **Example Message** |  \n| **401 Unauthorized** | Invalid Credentials | \"Invalid email or password. Please try again.\" |  \n| **400 Bad Request** | Missing Fields | \"Please provide both email and password.\" |  \n| **404 Not Found** | User Deleted | \"Account not found or has been deactivated.\" |\n\nEndFragment\n\nEndFragment"
+        },
+        "response": []
+      },
+      {
+        "name": "Register",
+        "request": {
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "type": "string"
+              }
+            ]
+          },
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"username\": \"Sagar Kumar\",\r\n  \"email\": \"sagar@example.com\",\r\n  \"password\": \"sagar123\"\r\n}\r\n",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "{{base_url}}/api/auth/register",
+            "host": [
+              "{{base_url}}"
+            ],
+            "path": [
+              "api",
+              "auth",
+              "register"
+            ]
+          },
+          "description": "StartFragment\n\n### **\\[POST\\] User Registration**\n\n**Endpoint:** `{{base_url}}/api/auth/register`\n\n#### **Description**\n\nThis endpoint serves as the public onboarding gateway for all new users. To maintain a high-security posture and prevent unauthorized access to sensitive administrative functions, the system implements a **Strict Role-Locking Policy**.\n\n#### **Features**\n\n- **Role Overriding (Anti-Privilege Escalation):** The backend is architected to explicitly ignore the `role` field in the request payload. This ensures that a malicious actor cannot grant themselves `admin` or `analyst` status during signup.\n    \n- **Default Authorization:** Every successful registration is hardcoded to the **'viewer'** role.\n    \n- **Data Sanitization:** The response object is sanitized using Mongoose `.toObject()` or `.select('-password')` to ensure the hashed password is never exposed in the API response.\n    \n- **Bcrypt Hashing:** Passwords undergo a one-way salt-and-hash process before being persisted to the database.\n    \n\n---\n\n#### **Request Body (JSON)**\n\nJSON\n\n``` bash\n{\n  \"username\": \"Sagar Kumar\",\n  \"email\": \"sagar@example.com\",\n  \"password\": \"sagar123\"\n}\n\n ```\n\n**Note:** Even if you include `\"role\": \"admin\"` in the JSON above, the system will override it to `\"viewer\"`.\n\n#### Success Response (201 Created)\n\nJSON\n\n``` bash\n{\n    \"success\": true,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"id\": \"69cf8b35aebbdfef86fb788f\",\n        \"username\": \"Sagar Kumar\",\n        \"role\": \"viewer\"\n    }\n}\n\n ```\n\nStartFragment\n\n#### **Error Responses**\n\n| **Status Code** | **Reason** | **Example Message** |  \n| **400 Bad Request** | Duplicate Email | \"Email already exists. Please use a different email.\" |  \n| **400 Bad Request** | Validation Fail | \"Password must be at least 8 characters long.\" |  \n| **500 Internal Error** | Server/DB Issue | \"An unexpected error occurred on the server.\" |\n\nEndFragment\n\nEndFragment"
+        },
+        "response": []
+      }
+    ],
+    "description": "StartFragment\n\nThis module manages the complete user lifecycle, from secure onboarding to session termination. The architecture follows a **\"Secure-by-Default\"** philosophy to mitigate common vulnerabilities like Privilege Escalation and Session Hijacking.\n\n---\n\n### 1\\. Identity Bootstrapping (The \"First Admin\" Logic)\n\nIn a production environment, manual database manipulation is a security risk. Our system uses an automated **Data Seeding** strategy.\n\n- **Mechanism:** During the `connectDB` lifecycle, a **Seed Script** executes automatically.\n    \n- **Logic:** The system scans the database for an existing user with the `admin` role. If no administrator is found, the backend initializes a **Master Admin** account using credentials defined in the Environment Variables (`.env`).\n    \n- **Production Benefit:** This ensures a \"Self-Healing\" infrastructure where a secure governance account is always available from the first second of deployment without manual intervention.\n    \n\n---\n\n### 2\\. User Registration (Public Onboarding)\n\n- **Endpoint:** `POST /api/auth/register`\n    \n- **Role Overriding (Security Layer):** To prevent **Mass Assignment Vulnerabilities**, the controller is hardcoded to ignore any `role` field sent in the request body.\n    \n- **Default State:** Every new registration is strictly assigned the **'viewer'** role.\n    \n- **Constraint:** There is no public path to register as an Admin or Analyst. This creates a \"Zero-Trust\" entry point.\n    \n\n---\n\n### 3\\. Role Elevation (Promoting a Viewer)\n\nSince public registration is locked to the lowest privilege level, elevating a user requires internal governance:\n\n- **The Flow:** A new user registers as a **Viewer**. An existing **Administrator** then retrieves that User’s ID and performs a promotion.\n    \n- **Governance API:** `PUT /api/admin/user/:id` (Protected by Admin Middleware).\n    \n- **Rationale:** This ensures that elevated privileges (Analyst/Admin) are only granted to trusted individuals through a controlled administrative action.\n    \n\n---\n\n### 4\\. Unified Login & Session Integrity\n\n- **Endpoint:** `POST /api/auth/login`\n    \n- **Verification:** Credentials are cross-referenced against **Bcrypt-hashed** passwords.\n    \n- **Tokenization:** Upon successful authentication, the system issues a **JSON Web Token (JWT)** containing the user's authorized role.\n    \n- **XSS Protection:** The JWT is delivered via an **HTTP-only, Secure Cookie**. This prevents client-side JavaScript from accessing the token, effectively neutralizing Cross-Site Scripting (XSS) threats.\n    \n\n---\n\n### 5\\. Secure Logout\n\n- **Endpoint:** `POST /api/auth/logout`\n    \n- **Logic:** The server explicitly clears and expires the authentication cookie.\n    \n- **Result:** This ensures an immediate and stateless termination of the user session across the client and server.\n    \n\nEndFragment"
+  }
+]
 }
