@@ -381,6 +381,17 @@ Powered by:
 
 > Overall, the system is engineered for high performance, scalability, and efficient resource utilization, making it suitable for large-scale backend applications.
 
+## 🔑 Demo Credentials (For Testing Only)
+
+**Admin Access**
+
+* **Email:** [admin@gmail.com](mailto:admin@gmail.com)
+* **Password:** Admin@123
+
+> ⚠️ These credentials are for demo purposes only.
+> In production, credentials are managed securely using environment variables.
+
+
 ## ⚙️ Setup & Installation
 
 ### 📦 Prerequisites
