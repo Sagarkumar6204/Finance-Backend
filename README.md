@@ -136,7 +136,10 @@ authorize('create:record')
 - Secure session handling via **HTTP-only cookies**  
 - Password hashing using bcrypt  
 - Protection against **XSS & session hijacking**  
+- 🛡️ Login Rate Limiting (Brute-force Protection)
+- Prevents multiple failed login attempts to secure user accounts from brute-force attacks.
 
+  
 ---
 
 ### 👥 Identity & User Management
@@ -424,6 +427,63 @@ http://localhost:3000/api
 ```
 > On first server start, the system will automatically create a Master Admin account using the provided environment variables (Identity Bootstrapping).
 
+## 🌐 Testing API with Postman (Deployed Backend)
+
+### 🚀 Step 1: Use Deployed API Base URL
+
+After deployment, update the `base_url` variable in Postman:
+
+```bash
+https://finance-backend-yirw.onrender.com
+```
+
+#### 📂 Step 2: Import Postman Collection
+1. Open Postman
+2. Click on Import
+3. Select the file from the root directory:
+```bash
+Backend\postmanAPI\finance-backend-api-postman_collection.json
+```
+
+### ⚙️ Step 3: Login to Get Token
+
+Use the login endpoint:
+```bash
+POST /api/auth/login
+
+{
+  "email": "admin@gmail.com",
+  "password": "Admin@123"
+}
+```
+After successful login:
+
+- JWT token will be generated
+- Cookie will be stored automatically (if enabled)
+
+### 🔐 Step 4: Configure Authorization
+If cookies are not working (common in deployed APIs):
+
+Add Authorization header manually:
+```bash
+Authorization: Bearer <your_token>
+```
+
+### ⚙️ Step 5: Important Postman Settings
+- Enable Send Cookies Automatically
+- Enable Follow Redirects
+- Ensure correct base_url is set
+
+
+### 🧪 Step 6: Test APIs
+
+Now you can test all endpoints:
+
+- /api/transactions/all
+- /api/transactions/add
+- /api/transactions/stats
+- /api/admin/all-users
+
 ## 🧪 Testing API with Postman (Local Setup)
 
 ### 📍 Step 1: Start the Backend Server
@@ -486,62 +546,7 @@ Now you can test all endpoints:
 
 > This setup ensures complete local testing of authentication, RBAC, and transaction APIs before deploying the backend.
 
-## 🌐 Testing API with Postman (Deployed Backend)
 
-### 🚀 Step 1: Use Deployed API Base URL
-
-After deployment, update the `base_url` variable in Postman:
-
-```bash
-https://finance-backend-yirw.onrender.com
-```
-
-#### 📂 Step 2: Import Postman Collection
-1. Open Postman
-2. Click on Import
-3. Select the file from the root directory:
-```bash
-Backend\postmanAPI\finance-backend-api-postman_collection.json
-```
-
-### ⚙️ Step 3: Login to Get Token
-
-Use the login endpoint:
-```bash
-POST /api/auth/login
-
-{
-  "email": "admin@gmail.com",
-  "password": "Admin@123"
-}
-```
-After successful login:
-
-- JWT token will be generated
-- Cookie will be stored automatically (if enabled)
-
-### 🔐 Step 4: Configure Authorization
-If cookies are not working (common in deployed APIs):
-
-Add Authorization header manually:
-```bash
-Authorization: Bearer <your_token>
-```
-
-### ⚙️ Step 5: Important Postman Settings
-- Enable Send Cookies Automatically
-- Enable Follow Redirects
-- Ensure correct base_url is set
-
-
-### 🧪 Step 6: Test APIs
-
-Now you can test all endpoints:
-
-- /api/transactions/all
-- /api/transactions/add
-- /api/transactions/stats
-- /api/admin/all-users
 
 ## 📬 API Endpoints
 
